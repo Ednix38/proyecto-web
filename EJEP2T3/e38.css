@@ -1,0 +1,10 @@
+#parrafo1,#parrafo2 {
+  background-color:#ff0;
+  width:300px;
+  font-size:2rem;
+}
+
+#parrafo2 {
+  position:relative;
+  top:-45px;
+}

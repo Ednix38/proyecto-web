@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PokéHub — Mega App</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .iframe-container {
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">PH</div>
+        <div>
+          <h1>PokéHub</h1>
+          <div style="color:var(--muted);font-size:13px">HUB App — Pokédex · Team · Calc · Juego</div>
+        </div>
+      </div>
+      <div>
+        <button id="refreshBtn">Actualizar Pokédex</button>
+      </div>
+    </header>
+
+    <nav id="sidebar">
+      <div style="margin-bottom:10px;color:var(--white)">Navegación</div>
+      <div class="nav-link active" data-module="pokedex">Pokédex</div>
+      <div class="nav-links" data-module="team"> <a href="battle.html" target="_blank" style="text-decoration:none;">Battle</a></div>
+      <div class="nav-link" data-module="calc">Damage Calculator</div>
+      <div class="nav-link" data-module="game">Who's That?</div>
+
+    </nav>
+
+    <main>
+      <section id="module-pokedex" class="module">
+        <div class="controls">
+          <input id="searchInput" type="search" placeholder="Buscar por nombre o id (ej: pikachu, 25)" />
+          <select id="typeFilter">
+            <option value="">Filtrar por tipo</option>
+          </select>
+          <select id="sortSelect">
+            <option value="id">Orden: ID</option>
+            <option value="name">Orden: Nombre</option>
+          </select>
+          <button id="loadMore">Cargar más</button>
+          <div style="margin-left:auto;color:var(--muted);align-self:center">Mostrando <span id="shownCount">0</span></div>
+        </div>
+
+        <div id="pokedexGrid" class="grid"></div>
+      </section>
+
+      <section id="module-calc" class="module" style="display:none">
+          <div class="iframe-container">
+    <iframe src="calculadora.html" frameborder="0"></iframe>
+  </div>
+      </section>
+
+      <section id="module-game" class="module" style="display:none">
+        <h2>Who’s That Pokémon?</h2>
+        <p class="small">Adivina el Pokémon silueteado. Pulsa 'Nueva ronda'.</p>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <div style="width:240px;height:240px;background:var(--glass);border-radius:12px;display:flex;align-items:center;justify-content:center">
+            <img id="gameSprite" src="" alt="" style="max-width:200px;max-height:200px" class="silhouette hidden">
+          </div>
+          <div style="flex:1">
+            <div style="display:flex;gap:8px">
+              <input id="guessInput" placeholder="Escribe el nombre" />
+              <button id="guessBtn">Adivinar</button>
+              <button id="newRound">Nueva ronda</button>
+            </div>
+            <div style="margin-top:12px" id="gameMsg" class="small"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 id="modalTitle">Título</h3>
+          <div>
+            <button id="modalClose">Cerrar</button>
+          </div>
+        </div>
+        <div id="modalBody" style="margin-top:12px"></div>
+      </div>
+    </div>
+
+    <footer>Proyecto educativo · Datos de PokéAPI (pokeapi.co) · Hecho con HTML/CSS/JS</footer>
+  </div>
+
+<script src="./js/utils.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/pokedex.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/team.js"></script>
+<script src="./js/calc.js"></script>
+<script src="./js/game.js"></script>
+<script src="./js/map.js"></script>
+<script src="./js/nav.js"></script>
+<script src="./js/main.js"></script>
+
+</body>
+</html>

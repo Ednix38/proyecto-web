@@ -1,0 +1,307 @@
+/* ========== ESTILOS PROFESIONALES PARA PORTAFOLIO UTA (DARK MODE CÓDIGO) ========== */
+
+:root {
+  /* Paleta Dark Mode Profesional */
+  --bg: #0a0e13;         /* Fondo Oscuro Profundo (casi negro) */
+  --surface: #141a23;    /* Superficies primarias (cards) */
+  --text: #eef1f5;       /* Texto principal (blanco brillante) */
+  --muted: #aeb8c9;      /* Texto secundario, detalles (gris claro) */
+  --border: #2c384a;     /* Borde sutil, separa elementos */
+
+  /* Acentos Programación (Cian y Azul Neón) */
+  --accent-cyan: #00e5ff;       /* Cian vibrante, como sintaxis */
+  --accent-blue: #006eff;       /* Azul secundario */
+  --accent-gradient: linear-gradient(90deg, #0077ff 0%, #00e5ff 100%);
+
+  /* Diseño y Tipografía */
+  --radius: 8px; /* Bordes ligeramente más cuadrados */
+  /* Sombra sutil que brilla en la oscuridad */
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 229, 255, 0.05);
+  --fw-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px; /* Fuente un poco más pequeña para densificar el contenido */
+  line-height: 1.6;
+
+}
+
+/* Reset + base */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fw-sans);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; border-radius: 6px; }
+
+/* ====== CONTENEDOR ====== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px; /* Mayor espaciado vertical para un look moderno */
+}
+
+/* =================================================== */
+/* ====== 1. HEADER (Menu y Logo) ====== */
+/* =================================================== */
+.site-header {
+  background: var(--surface); /* Fondo oscuro consistente */
+  border-bottom: 2px solid var(--border); /* Separador visual */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 16px 24px;
+  gap: 20px;
+}
+
+/* Marca y logo - AJUSTE DE DISPOSICIÓN */
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.uni-logo {
+  width: 48px; /* Logo más pequeño, más elegante */
+  height: 48px;
+  object-fit: contain;
+  background: #fff; /* Logo siempre en blanco para contraste */
+  border-radius: 6px;
+  padding: 5px;
+}
+.brand-text { /* Agregamos un div para el texto y justificarlo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1rem; /* Título conciso */
+  letter-spacing: 0.1px;
+  margin: 0;
+  color: var(--text);
+}
+.name {
+  font-size: 0.85rem;
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+/* ====== NAVEGACIÓN (Interactividad) ====== */
+.main-nav {
+  gap: 8px;
+}
+.main-nav a {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 8px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.1); /* Brillo sutil */
+  transform: none;
+}
+.main-nav a.active {
+  background: var(--accent-cyan);
+  color: var(--bg); /* Texto oscuro sobre acento brillante */
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+/* =================================================== */
+/* ====== 2. TIPOGRAFÍA Y TEXTO (Jerarquía y Justificación) ====== */
+/* =================================================== */
+h1, h2, h3 {
+  color: var(--text);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+}
+h2 {
+  font-size: 2.5rem; /* Título principal de gran impacto */
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.2); /* Sombra de neón */
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 1.3rem;
+  color: var(--accent-cyan); /* Subtítulos en acento de código */
+  font-weight: 700;
+}
+p {
+  margin: 0 0 20px;
+  color: var(--text);
+  text-align: justify; /* CORRECCIÓN VISUAL: Justificación */
+}
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  border-left: 4px solid var(--accent-blue); /* Línea de acento */
+  padding-left: 18px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Énfasis en texto: resalta como variable de código */
+strong {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+/* =================================================== */
+/* ====== 3. BOTONES / CTA (Estilo Neón) ====== */
+/* =================================================== */
+.cta {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  justify-content: flex-start;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: 4px; /* Estilo más de terminal/consola */
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Para un look más de sistema */
+  background: var(--accent-cyan);
+
+}
+
+/* Botón Primario: Brillo Cian (Principal) */
+.btn:nth-child(1) {
+  background: var(--accent-cyan);
+  color: var(--bg);
+  border: 1px solid var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); /* Fuerte brillo neón */
+}
+.btn:nth-child(1):hover {
+  background: none;
+  color: var(--accent-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+}
+
+/* Botón Secundario: Azul Outline */
+.btn:nth-child(2) {
+  background: none;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
+}
+.btn:nth-child(2):hover {
+  background: var(--accent-blue);
+  color: var(--text);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.5);
+}
+
+/* =================================================== */
+/* ====== 4. CARDS / ARTÍCULOS (Efecto Holo) ====== */
+/* =================================================== */
+.task, .project, .card {
+  background: var(--surface);
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.task:hover, .project:hover, .card:hover {
+  transform: translateY(-5px);
+  /* Acentuamos el brillo en el hover */
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15), 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+.task h3 {
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+.meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.task .content {
+  margin-top: 15px;
+}
+.task footer {
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+}
+
+/* Botón dentro de la Card (simula un enlace de terminal) */
+.task .btn, .card .btn {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: #1f2733;
+  color: var(--accent-cyan);
+  border: 1px solid #1f2733;
+  box-shadow: none;
+  text-transform: none;
+}
+.task .btn:hover, .card .btn:hover {
+  color: var(--text);
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  transform: translateY(-1px);
+}
+
+/* PROYECTOS (Unidad II) */
+.project .gallery {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.project .gallery img {
+  height: 140px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project .gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Brillo al ver imagen */
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 50px 0;
+  background: var(--surface);
+  color: var(--muted);
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+}
+
+/* UTILIDADES */
+.badge {
+  padding: 5px 10px;
+  background: #1f2733; /* Fondo oscuro */
+  color: var(--accent-cyan);
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+/* RESPONSIVO */
+@media (max-width: 860px) {
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+  .main-nav { margin-top: 10px; }
+}
+@media (max-width: 520px) {
+  h2 { font-size: 2rem; }
+  .btn { width: 100%; text-align: center; }
+  .container { padding: 40px 15px; }
+  p { text-align: left; /* Deshabilitamos justificado en móviles */ }
+}

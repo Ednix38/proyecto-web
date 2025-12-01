@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-7 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /*Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:
+                  a)	La cantidad de valores negativos ingresados.
+                  b)	La cantidad de valores positivos ingresados.
+                  c)	La cantidad de múltiplos de 15.
+                  d)	El valor acumulado de los números ingresados que son pares.*/
+
+        let cantnegativos = 0;
+        let cantpositivos = 0;
+        let mult15 = 0;
+        let sumapares = 0;
+        for (let f = 1; f &lt;= 10; f++) {
+            let valor = parseInt(prompt(&#x27;Ingrese un valor:&#x27;));
+            if (valor &lt; 0) {
+                cantnegativos++;
+            } else {
+                if (valor &gt; 0) {
+                    cantpositivos++;
+                }
+            }
+            if (valor % 15 == 0 &amp;&amp; valor != 0) {
+                mult15++;
+            }
+            if (valor % 2 == 0) {
+                sumapares = sumapares + valor;
+            }
+        }
+        document.write(&#x27;Cantidad de valores negativos:&#x27; + cantnegativos + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de valores positivos:&#x27; + cantpositivos + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de múltiplos de 15:&#x27; + mult15 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Suma de los valores pares ingresados:&#x27; + sumapares + &#x27;&lt;br&gt;&#x27;);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

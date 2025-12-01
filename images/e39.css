@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#cabecera {
+  background-color: #f99;
+  font-family: Verdana, sans-serif;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 👉 hace que el rojo llegue hasta el borde */
+  height: 50px;
+}
+
+#columna1 {
+  background-color: #ff0;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0;
+  top: 51px;
+  min-height: 700px;
+  width: 200px; /* opcional: define ancho de columna */
+}
+

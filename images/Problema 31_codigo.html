@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 31 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        Ingrese nombre de usuario:
+        &lt;input type=&quot;text&quot; id=&quot;usuario&quot;&gt;&lt;br&gt; Ingrese clave:
+        &lt;input type=&quot;password&quot; id=&quot;clave&quot; onBlur=&quot;verificar(this)&quot;&gt;&lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;confirmar&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar(control) {
+            if (control.value.length &lt; 7 || control.value.length &gt; 20) {
+                alert(&#x27;cantidad de caracteres no valido en la clave(deben ser entre 7-20 caracteres)&#x27;);
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

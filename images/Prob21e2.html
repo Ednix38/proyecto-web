@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function cargarVectores(vec1, vec2) {
+
+            for (let f = 0; f < vec1.length; f++) {
+                let valor = prompt('Ingrese componente del primer vector:', '');
+                vec1[f] = parseInt(valor);
+            }
+            for (let f = 0; f < vec2.length; f++) {
+                let valor = prompt('Ingrese componente del segundo vector:', '');
+                vec2[f] = parseInt(valor);
+            }
+        }
+
+        function sumarVectores(vec1, vec2, vecsuma) {
+            for (let f = 0; f < vecsuma.length; f++) {
+                vecsuma[f] = vec1[f] + vec2[f];
+            }
+        }
+
+        function imprimirVector(vecsuma) {
+            for (let f = 0; f < vecsuma.length; f++) {
+                document.write(vecsuma[f] + ' ');
+            }
+        }
+
+        let vec1 = new Array(5);
+        let vec2 = new Array(5);
+        let vecsuma = new Array(5);
+        cargarVectores(vec1, vec2);
+        sumarVectores(vec1, vec2, vecsuma);
+        imprimirVector(vecsuma);
+    </script>
+
+</body>
+
+</html>

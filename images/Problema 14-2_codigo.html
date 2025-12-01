@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 14-2 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        let nrocuenta;
+        let nombre;
+        let saldo = 0;
+        let saldoacre = 0;
+        do {
+            nrocuenta = parseInt(prompt(&#x27;Ingrese nro de cuenta:&#x27;));
+            if (nrocuenta &gt;= 0) {
+                nombre = prompt(&#x27;Nombre del cliente:&#x27;);
+                saldo = parseFloat(prompt(&#x27;Saldo actual:&#x27;));
+                if (saldo &gt; 0) {
+                    saldoacre = saldoacre + saldo;
+                    document.write(nombre + &#x27; tiene saldo acreedor&lt;br&gt;&#x27;);
+                } else {
+                    if (saldo &lt; 0) {
+                        document.write(nombre + &#x27; tiene saldo deudor&lt;br&gt;&#x27;);
+                    } else {
+                        document.write(nombre + &#x27; tiene saldo nulo&lt;br&gt;&#x27;);
+                    }
+                }
+
+            }
+        } while (nrocuenta &gt; 0);
+        document.write(&#x27;Suma total de saldos acreedores:&#x27; + saldoacre);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

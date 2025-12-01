@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let frase = prompt('Ingrese una frase:');
+        for (let f = 0; f < frase.length; f++) {
+            if (frase.charAt(f) == ' ') {
+                document.write('<br>');
+            } else {
+                document.write(frase.charAt(f));
+            }
+        }
+    </script>
+
+</body>
+
+</html>

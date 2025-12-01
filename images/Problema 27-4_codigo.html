@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 27-4 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Examen de Preguntas&lt;/h2&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;1. ¿Cuál es el resultado de 2 + 2?&lt;/p&gt;
+        &lt;select id=&quot;p1&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;-- Selecciona una --&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt; 
+            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;2. ¿Capital de México?&lt;/p&gt;
+        &lt;select id=&quot;p2&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;-- Selecciona una --&lt;/option&gt;
+            &lt;option value=&quot;Guadalajara&quot;&gt;Guadalajara&lt;/option&gt;
+            &lt;option value=&quot;CDMX&quot;&gt;CDMX&lt;/option&gt; 
+            &lt;option value=&quot;Monterrey&quot;&gt;Monterrey&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;3. ¿HTML sirve para...?&lt;/p&gt;
+        &lt;select id=&quot;p3&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;-- Selecciona una --&lt;/option&gt;
+            &lt;option value=&quot;backend&quot;&gt;Programar el backend&lt;/option&gt;
+            &lt;option value=&quot;estructura&quot;&gt;Estructurar páginas web&lt;/option&gt; 
+            &lt;option value=&quot;base&quot;&gt;Crear bases de datos&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;4. ¿Qué significa CSS?&lt;/p&gt;
+        &lt;select id=&quot;p4&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;-- Selecciona una --&lt;/option&gt;
+            &lt;option value=&quot;capa&quot;&gt;Capa de servidor seguro&lt;/option&gt;
+            &lt;option value=&quot;hojas&quot;&gt;Hojas de estilo en cascada&lt;/option&gt; 
+            &lt;option value=&quot;codigo&quot;&gt;Código de sistema seguro&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;br&gt;
+    &lt;button onclick=&quot;corregir()&quot;&gt;Corregir&lt;/button&gt;
+
+    &lt;h3 id=&quot;resultado&quot;&gt;&lt;/h3&gt;
+
+    &lt;script&gt;
+        function corregir() {
+            let correctas = 0;
+
+            if (document.getElementById(&quot;p1&quot;).value === &quot;4&quot;) correctas++;
+            if (document.getElementById(&quot;p2&quot;).value === &quot;CDMX&quot;) correctas++;
+            if (document.getElementById(&quot;p3&quot;).value === &quot;estructura&quot;) correctas++;
+            if (document.getElementById(&quot;p4&quot;).value === &quot;hojas&quot;) correctas++;
+
+            document.getElementById(&quot;resultado&quot;).innerText =
+                &quot;Correctas: &quot; + correctas + &quot; | Incorrectas: &quot; + (4 - correctas);
+        }
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</body>
+</html>

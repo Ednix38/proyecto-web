@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let texto = prompt('Ingrese una palabra o frase:');
+        let cant = 0;
+        for (let f = 0; f < texto.length; f++) {
+            if (texto.charAt(f) == texto.charAt(texto.length - 1 - f)) {
+                cant++;
+            }
+        }
+        if (cant == texto.length) {
+            document.write(texto + ' se lee igual en ambas direcciones');
+        } else {
+            document.write(texto + ' no se lee igual en ambas direcciones');
+        }
+    </script>
+
+</body>
+
+</html>

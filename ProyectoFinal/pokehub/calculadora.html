@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calculadora IV/EV y Daño — PokéAPI</title>
+<style>
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#ffcb05;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --white: #e6eef6;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background: linear-gradient(180deg,#071021 0%, #071827 60%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+h1{
+  margin:0 0 14px;
+  font-size:22px;
+  font-weight:700;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:20px;
+}
+
+/* Tarjetas */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Texto pequeño */
+.small{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.muted{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Inputs */
+input[type="text"],
+select,
+input[type="number"]{
+  width:100%;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:var(--glass);
+  color:var(--white);
+  box-sizing:border-box;
+}
+
+select option {
+  background: rgba(20,20,26,0.95);
+  color: #f8f8f8;
+  padding: 6px;
+}
+
+
+label{
+  display:block;
+  font-weight:600;
+  margin:8px 0 6px;
+}
+
+/* Layouts */
+.row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.col{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+/* Botones */
+.btn{
+  background:var(--accent);
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  color:#021124;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(255,203,5,0.25);
+}
+
+.btn:hover{
+  filter:brightness(1.08);
+}
+
+/* Resultado */
+.result{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:12px;
+  border-radius:10px;
+  margin-top:12px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Sprites */
+.sprite{
+  width:96px;
+  height:96px;
+  background:var(--glass-2);
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.flex{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* Move meta info */
+.move-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  background:rgba(255,255,255,0.01);
+  padding:6px 8px;
+  border-radius:8px;
+}
+
+/* Divider */
+hr{
+  margin:12px 0;
+  border:none;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+/* Danger color */
+.danger{
+  color:#ff9a9a;
+}
+
+/* Footer */
+footer{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media(max-width:980px){
+  .wrap{
+    grid-template-columns:1fr;
+  }
+  .sprite{
+    width:80px;
+    height:80px;
+  }
+}
+
+</style>
+</head>
+<body>
+  <h1>Calculadora IV/EV y estimador de daño (PokéAPI)</h1>
+      <div class="card">
+      <div class="flex" style="justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="small">Atacante</div>
+          <div class="flex" style="align-items:center;margin-top:8px">
+            <div class="sprite" id="attSprite">—</div>
+            <div>
+              <div id="attName" style="font-weight:700">—</div>
+              <div id="attTypes" class="muted">—</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="small">Defensor</div>
+          <div class="flex" style="align-items:center;margin-top:8px">
+            <div class="sprite" id="defSprite">—</div>
+            <div>
+              <div id="defName" style="font-weight:700">—</div>
+              <div id="defTypes" class="muted">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="wrap">
+    <div class="card">
+      <div class="row" style="justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="small">Atacante</div>
+          <input id="attackerName" placeholder="Escribe nombre (ej: pikachu)" />
+          <div class="muted small">Selecciona el Pokémon y luego el movimiento.</div>
+        </div>
+        <div style="text-align:right">
+          <div class="small">Defensor</div>
+          <input id="defenderName" placeholder="Escribe nombre (ej: buneary)" />
+          <div class="muted small">Selecciona el Pokémon defensor.</div>
+        </div>
+      </div>
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+      <div class="row" style="gap:18px">
+        <div style="flex:1">
+          <label>Nivel</label>
+          <input id="level" type="number" min="1" max="100" value="50" />
+        </div>
+        <div style="width:120px">
+          <label>Naturaleza</label>
+          <select id="nature"></select>
+        </div>
+        <div style="width:120px">
+          <label>Critico</label>
+          <select id="critical"><option value="1">No</option><option value="1.5">Sí (x1.5)</option></select>
+        </div>
+      </div>
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+      <div style="display:flex; gap:12px; align-items:flex-start">
+        <div style="flex:1">
+          <label>Movimiento (cargado desde el atacante)</label>
+          <select id="moveSelect"><option value="">— escoge Pokémon primero —</option></select>
+          <div class="move-info muted" id="moveMeta"></div>
+        </div>
+        <div style="width:110px">
+          <label>Power</label>
+          <div id="movePower" class="muted small">—</div>
+        </div>
+        <div style="width:120px">
+          <label>Clase</label>
+          <div id="moveClass" class="muted small">—</div>
+        </div>
+      </div>
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+      <div class="row">
+        <div style="flex:1">
+          <label>IVs (0–31)</label>
+          <div class="stat-grid">
+            <input id="iv_hp" type="number" min="0" max="31" value="31" />
+            <input id="iv_atk" type="number" min="0" max="31" value="31" />
+            <input id="iv_def" type="number" min="0" max="31" value="31" />
+            <input id="iv_spa" type="number" min="0" max="31" value="31" />
+            <input id="iv_spd" type="number" min="0" max="31" value="31" />
+            <input id="iv_spe" type="number" min="0" max="31" value="31" />
+          </div>
+        </div>
+        <div style="flex:1">
+          <label>EVs (0–252, total ≤510)</label>
+          <div class="stat-grid">
+            <input id="ev_hp" type="number" min="0" max="252" value="0" />
+            <input id="ev_atk" type="number" min="0" max="252" value="252" />
+            <input id="ev_def" type="number" min="0" max="252" value="0" />
+            <input id="ev_spa" type="number" min="0" max="252" value="0" />
+            <input id="ev_spd" type="number" min="0" max="252" value="4" />
+            <input id="ev_spe" type="number" min="0" max="252" value="0" />
+          </div>
+          <div class="muted small" id="evTotal">Total EVs: 256 / 510</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn" id="btnCalc">Calcular</button>
+        <button class="btn" id="btnFetchSample" style="background:transparent;border:1px solid var(--accent);color:var(--accent)">Cargar ejemplo: Charizard vs Ferrothorn</button>
+        <div class="muted small">Nota: la PokéAPI puede tardar unos instantes en responder.</div>
+      </div>
+
+      <div class="result" id="resultsArea" style="display:none"></div>
+
+    </div>
+
+
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+      <div>
+        <div class="small">Estadísticas calculadas</div>
+        <div id="statOutputs" style="margin-top:8px" class="muted small">—</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/*
+  Calculadora IV/EV + daño usando PokéAPI
+  - Stats formulas:
+    HP: floor(((2*Base + IV + floor(EV/4)) * Level) / 100) + Level + 10
+    Other: floor((floor(((2*Base + IV + floor(EV/4)) * Level) / 100) + 5) * NatureMultiplier)
+  - Damage formula simplified (official):
+    Base = (((2*L)/5 + 2) * Power * A / D) / 50 + 2
+    Damage = floor(Base * Modifier)
+    Modifier = STAB * TypeEffectiveness * Critical * Random(0.85..1) * Other (ignored)
+*/
+
+const apiRoot = 'https://pokeapi.co/api/v2';
+
+const natureMultipliers = {
+  'Hardy': {atk:1, def:1, spa:1, spd:1, spe:1},
+  'Lonely': {atk:1.1, def:0.9, spa:1, spd:1, spe:1},
+  'Brave': {atk:1.1, def:1, spa:1, spd:1, spe:0.9},
+  'Adamant': {atk:1.1, def:1, spa:0.9, spd:1, spe:1},
+  'Naughty': {atk:1.1, def:1, spa:1, spd:0.9, spe:1},
+  'Bold': {atk:0.9, def:1.1, spa:1, spd:1, spe:1},
+  'Docile': {atk:1, def:1, spa:1, spd:1, spe:1},
+  'Relaxed': {atk:1, def:1.1, spa:1, spd:1, spe:0.9},
+  'Impish': {atk:1, def:1.1, spa:0.9, spd:1, spe:1},
+  'Lax': {atk:1, def:1.1, spa:1, spd:0.9, spe:1},
+  'Timid': {atk:0.9, def:1, spa:1, spd:1, spe:1.1},
+  'Hasty': {atk:1, def:0.9, spa:1, spd:1, spe:1.1},
+  'Serious': {atk:1, def:1, spa:1, spd:1, spe:1},
+  'Jolly': {atk:1, def:1, spa:0.9, spd:1, spe:1.1},
+  'Naive': {atk:1, def:1, spa:1, spd:0.9, spe:1.1},
+  'Modest': {atk:0.9, def:1, spa:1.1, spd:1, spe:1},
+  'Mild': {atk:1, def:0.9, spa:1.1, spd:1, spe:1},
+  'Quiet': {atk:1, def:1, spa:1.1, spd:1, spe:0.9},
+  'Bashful': {atk:1, def:1, spa:1, spd:1, spe:1},
+  'Rash': {atk:1, def:1, spa:1.1, spd:0.9, spe:1},
+  'Calm': {atk:0.9, def:1, spa:1, spd:1.1, spe:1},
+  'Gentle': {atk:1, def:0.9, spa:1, spd:1.1, spe:1},
+  'Sassy': {atk:1, def:1, spa:1, spd:1.1, spe:0.9},
+  'Careful': {atk:0.9, def:1, spa:1, spd:1.1, spe:1},
+  'Quirky': {atk:1, def:1, spa:1, spd:1, spe:1}
+};
+
+function populateNatures(){
+  const sel = document.getElementById('nature');
+  Object.keys(natureMultipliers).forEach(n=>{
+    const opt = document.createElement('option');
+    opt.value = n; opt.textContent = n;
+    sel.appendChild(opt);
+  });
+  sel.value = 'Adamant';
+}
+
+populateNatures();
+
+const elements = {
+  attackerName: document.getElementById('attackerName'),
+  defenderName: document.getElementById('defenderName'),
+  moveSelect: document.getElementById('moveSelect'),
+  moveMeta: document.getElementById('moveMeta'),
+  movePower: document.getElementById('movePower'),
+  moveClass: document.getElementById('moveClass'),
+  level: document.getElementById('level'),
+  nature: document.getElementById('nature'),
+  critical: document.getElementById('critical'),
+  btnCalc: document.getElementById('btnCalc'),
+  btnSample: document.getElementById('btnFetchSample'),
+  resultsArea: document.getElementById('resultsArea'),
+  attSprite: document.getElementById('attSprite'),
+  defSprite: document.getElementById('defSprite'),
+  attName: document.getElementById('attName'),
+  defName: document.getElementById('defName'),
+  attTypes: document.getElementById('attTypes'),
+  defTypes: document.getElementById('defTypes'),
+  statOutputs: document.getElementById('statOutputs'),
+  movePowerDiv: document.getElementById('movePower'),
+  moveClassDiv: document.getElementById('moveClass'),
+  evTotal: document.getElementById('evTotal')
+};
+
+let attackerData=null, defenderData=null, currentMove=null;
+
+async function fetchPokemon(name){
+  name = name.trim().toLowerCase();
+  if(!name) return null;
+  try{
+    const res = await fetch(`${apiRoot}/pokemon/${encodeURIComponent(name)}`);
+    if(!res.ok) return null;
+    const data = await res.json();
+    return data;
+  }catch(e){
+    console.error(e);
+    return null;
+  }
+}
+
+async function fetchMove(urlOrName){
+  try{
+    let url = urlOrName;
+    if(!url.includes('http')) url = `${apiRoot}/move/${encodeURIComponent(urlOrName)}`;
+    const res = await fetch(url);
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){
+    console.error(e);
+    return null;
+  }
+}
+
+async function fetchType(name){
+  const res = await fetch(`${apiRoot}/type/${name}`);
+  if(!res.ok) return null;
+  return res.json();
+}
+
+function setSprite(elem, url){
+  elem.innerHTML = '';
+  if(!url){ elem.textContent = '—'; return; }
+  const img = document.createElement('img');
+  img.src = url; img.style.maxWidth='100%';
+  img.alt='sprite';
+  elem.appendChild(img);
+}
+
+function showAttackerInfo(){
+  if(!attackerData) return;
+  elements.attName.textContent = capitalize(attackerData.name);
+  const types = attackerData.types.map(t=>capitalize(t.type.name)).join(' / ');
+  elements.attTypes.textContent = types;
+  const sprite = attackerData.sprites?.other?.['official-artwork']?.front_default || attackerData.sprites?.front_default || '';
+  setSprite(elements.attSprite, sprite);
+  populateMoves(attackerData.moves);
+}
+
+function showDefenderInfo(){
+  if(!defenderData) return;
+  elements.defName.textContent = capitalize(defenderData.name);
+  const types = defenderData.types.map(t=>capitalize(t.type.name)).join(' / ');
+  elements.defTypes.textContent = types;
+  const sprite = defenderData.sprites?.other?.['official-artwork']?.front_default || defenderData.sprites?.front_default || '';
+  setSprite(elements.defSprite, sprite);
+}
+
+function populateMoves(moves){
+  const sel = elements.moveSelect;
+  sel.innerHTML = '';
+  const movesSorted = moves.map(m=>m.move).sort((a,b)=>a.name.localeCompare(b.name));
+  movesSorted.forEach(m=>{
+    const opt = document.createElement('option');
+    opt.value = m.url;
+    opt.textContent = m.name.replace(/-/g,' ');
+    sel.appendChild(opt);
+  });
+  if(movesSorted.length>0){
+    sel.selectedIndex = 0;
+    onMoveChange();
+  } else {
+    elements.moveMeta.textContent = '—';
+    elements.movePowerDiv.textContent = '—';
+    elements.moveClassDiv.textContent = '—';
+  }
+}
+
+function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+elements.attackerName.addEventListener('change', async ()=>{
+  const name = elements.attackerName.value.trim();
+  if(!name) return;
+  elements.attName.textContent = 'Cargando...';
+  attackerData = await fetchPokemon(name);
+  if(!attackerData){ elements.attName.textContent = 'No encontrado'; attackerData=null; return; }
+  showAttackerInfo();
+});
+
+elements.defenderName.addEventListener('change', async ()=>{
+  const name = elements.defenderName.value.trim();
+  if(!name) return;
+  elements.defName.textContent = 'Cargando...';
+  defenderData = await fetchPokemon(name);
+  if(!defenderData){ elements.defName.textContent = 'No encontrado'; defenderData=null; return; }
+  showDefenderInfo();
+});
+
+elements.moveSelect.addEventListener('change', onMoveChange);
+
+async function onMoveChange(){
+  const url = elements.moveSelect.value;
+  if(!url){ elements.moveMeta.textContent='—'; elements.movePowerDiv.textContent='—'; elements.moveClassDiv.textContent='—'; currentMove=null; return; }
+  const mv = await fetchMove(url);
+  currentMove = mv;
+  elements.moveMeta.innerHTML = `<strong>${capitalize(mv.name.replace(/-/g,' '))}</strong> — Tipo: ${capitalize(mv.type.name)}, Precisión: ${mv.accuracy||'—'}, PP: ${mv.pp||'—'}`;
+  elements.movePowerDiv.textContent = mv.power || '—';
+  elements.moveClassDiv.textContent = mv.damage_class?.name || '—';
+}
+
+function getStatFromBase(base, iv, ev, level, isHP=false, natureMult=1){
+  const ev4 = Math.floor(ev/4);
+  if(isHP){
+    return Math.floor(((2*base + iv + ev4) * level) / 100) + level + 10;
+  } else {
+    const a = Math.floor(((2*base + iv + ev4) * level) / 100) + 5;
+    return Math.floor(a * natureMult);
+  }
+}
+
+function readIVs(){
+  return {
+    hp:+document.getElementById('iv_hp').value||0,
+    atk:+document.getElementById('iv_atk').value||0,
+    def:+document.getElementById('iv_def').value||0,
+    spa:+document.getElementById('iv_spa').value||0,
+    spd:+document.getElementById('iv_spd').value||0,
+    spe:+document.getElementById('iv_spe').value||0
+  };
+}
+function readEVs(){
+  const ev = {
+    hp:+document.getElementById('ev_hp').value||0,
+    atk:+document.getElementById('ev_atk').value||0,
+    def:+document.getElementById('ev_def').value||0,
+    spa:+document.getElementById('ev_spa').value||0,
+    spd:+document.getElementById('ev_spd').value||0,
+    spe:+document.getElementById('ev_spe').value||0
+  };
+  const total = Object.values(ev).reduce((a,b)=>a+b,0);
+  elements.evTotal.textContent = `Total EVs: ${total} / 510`;
+  return {ev, total};
+}
+
+elements.btnCalc.addEventListener('click', async ()=>{
+  // Validate
+  if(!attackerData || !defenderData){ alert('Asegúrate de cargar ambos Pokémon.'); return; }
+  if(!currentMove){ alert('Selecciona un movimiento válido del atacante.'); return; }
+  if(!currentMove.power){ alert('Ese movimiento no tiene poder (status). Selecciona otro.'); return; }
+
+  const level = +elements.level.value || 50;
+  const ivs = readIVs();
+  const {ev, total} = readEVs();
+  if(total>510){ alert('Total de EVs excede 510. Ajusta por favor.'); return; }
+  const nature = natureMultipliers[elements.nature.value] || natureMultipliers['Hardy'];
+
+  // Compute base stats map
+  const baseStats = {};
+  attackerData.stats.forEach(s => baseStats[s.stat.name] = s.base_stat);
+  defenderData.stats.forEach(s => {}); // defender base used later
+
+  const atkIsSpecial = currentMove.damage_class?.name === 'special';
+  // attacker stats
+  const attStats = {
+    hp: getStatFromBase(baseStats.hp, ivs.hp, ev.hp, level, true),
+    atk: getStatFromBase(baseStats.attack, ivs.atk, ev.atk, level, false, nature.atk),
+    def: getStatFromBase(baseStats.defense, ivs.def, ev.def, level, false, nature.def),
+    spa: getStatFromBase(baseStats['special-attack'], ivs.spa, ev.spa, level, false, nature.spa),
+    spd: getStatFromBase(baseStats['special-defense'], ivs.spd, ev.spd, level, false, nature.spd),
+    spe: getStatFromBase(baseStats.speed, ivs.spe, ev.spe, level, false, nature.spe)
+  };
+
+  // defender stats
+  const defBase = {};
+  defenderData.stats.forEach(s => defBase[s.stat.name] = s.base_stat);
+  const defStats = {
+    hp: getStatFromBase(defBase.hp, 31, 0, level, true), // defender IV/EV default assumption (we don't know) -> keep example defaults
+    atk: getStatFromBase(defBase.attack, 31, 0, level, false, 1),
+    def: getStatFromBase(defBase.defense, 31, 0, level, false, 1),
+    spa: getStatFromBase(defBase['special-attack'], 31, 0, level, false, 1),
+    spd: getStatFromBase(defBase['special-defense'], 31, 0, level, false, 1),
+    spe: getStatFromBase(defBase.speed, 31, 0, level, false, 1)
+  };
+
+  // Type effectiveness: multiply against each defender type
+  const moveType = currentMove.type.name;
+  const defenderTypes = defenderData.types.map(t=>t.type.name);
+  let typeMod = 1.0;
+  // fetch type data and compute damage relations
+  for(const t of defenderTypes){
+    const typeInfo = await fetchType(moveType);
+    // typeInfo has damage_relations: double_damage_to, half_damage_to, no_damage_to, etc.
+    // But we need how *moveType* affects defender type (i.e., moveType -> target type). PokeAPI returns damage_relations for the type, where "double_damage_to" lists types it is super effective against.
+    const dr = typeInfo.damage_relations;
+    if(dr.double_damage_to.some(x=>x.name===t)) typeMod *= 2;
+    if(dr.half_damage_to.some(x=>x.name===t)) typeMod *= 0.5;
+    if(dr.no_damage_to.some(x=>x.name===t)) typeMod *= 0;
+  }
+
+  // STAB
+  const attackerTypes = attackerData.types.map(t=>t.type.name);
+  const stab = attackerTypes.includes(moveType) ? 1.5 : 1.0;
+
+  // Choose A and D
+  const A = atkIsSpecial ? attStats.spa : attStats.atk;
+  const D = atkIsSpecial ? defStats.spa : defStats.def;
+
+  // Damage formula (min, max, average)
+  const power = currentMove.power || 0;
+  const levelFactor = Math.floor((2*level)/5)+2;
+  const baseDamage = (levelFactor * power * (A / D)) / 50 + 2;
+
+  const crit = +elements.critical.value || 1;
+  const randomMin = 0.85, randomMax = 1.0;
+  const modifierBase = stab * typeMod * crit;
+
+  const minDamage = Math.floor(baseDamage * modifierBase * randomMin);
+  const maxDamage = Math.floor(baseDamage * modifierBase * randomMax);
+  const avgDamage = Math.floor((minDamage + maxDamage) / 2);
+
+  // Display results
+elements.resultsArea.style.display = 'block';
+elements.resultsArea.innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-weight:700">${capitalize(attackerData.name)} (Lv ${level})</div>
+        <div class="muted small">Stats usados para cálculo</div>
+        <div style="margin-top:8px">${Object.entries(attStats).map(([k,v])=>`<strong>${k.toUpperCase()}:</strong> ${v}`).join(' · ')}</div>
+      </div>
+      <div>
+        <div style="font-weight:700">${capitalize(defenderData.name)}</div>
+        <div class="muted small">Tipos: ${defenderTypes.map(capitalize).join(' / ')}</div>
+        <div style="margin-top:8px">${Object.entries(defStats).map(([k,v])=>`<strong>${k.toUpperCase()}:</strong> ${v}`).join(' · ')}</div>
+      </div>
+    </div>
+
+    <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+    <div>
+      <div style="font-weight:700">Movimiento: ${capitalize(currentMove.name.replace(/-/g,' '))}</div>
+      <div class="muted small">Tipo: ${capitalize(moveType)} · Clase: ${capitalize(currentMove.damage_class?.name || '—')} · Poder: ${power}</div>
+
+      <div style="margin-top:10px;">
+        <div><strong>STAB:</strong> ${stab} · <strong>Efectividad total:</strong> ${typeMod} · <strong>Crítico:</strong> ${crit}</div>
+        <div style="margin-top:8px;font-size:18px">
+          <div><strong>Daño estimado:</strong></div>
+          <div style="margin-top:6px"><strong>Min:</strong> ${minDamage}  —  <strong>Promedio:</strong> ${avgDamage}  —  <strong>Max:</strong> ${maxDamage}</div>
+          <div class="muted" style="margin-top:6px">Rango de random usado: 0.85 — 1.0</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // update stat side panel
+  elements.statOutputs.innerHTML = `
+    <div><strong>ATK</strong> ${attStats.atk} · <strong>DEF</strong> ${attStats.def} · <strong>SpA</strong> ${attStats.spa}</div>
+    <div><strong>SpD</strong> ${attStats.spd} · <strong>SPE</strong> ${attStats.spe} · <strong>HP</strong> ${attStats.hp}</div>
+  `;
+});
+
+elements.btnSample.addEventListener('click', async ()=>{
+  elements.attackerName.value = 'charizard';
+  elements.defenderName.value = 'ferrothorn';
+  // trigger change events
+  elements.attackerName.dispatchEvent(new Event('change'));
+  elements.defenderName.dispatchEvent(new Event('change'));
+  // wait a bit then set selected move (flamethrower if present)
+  setTimeout(()=>{
+    const opts = elements.moveSelect.options;
+    for(let i=0;i<opts.length;i++){
+      if(opts[i].textContent.toLowerCase().includes('flamethrower')){ elements.moveSelect.selectedIndex = i; break; }
+    }
+    elements.moveSelect.dispatchEvent(new Event('change'));
+  }, 800);
+});
+
+// Update EV total live
+document.querySelectorAll('#ev_hp,#ev_atk,#ev_def,#ev_spa,#ev_spd,#ev_spe').forEach(e=>{
+  e.addEventListener('change', readEVs);
+});
+
+// Small helper: allow pressing Enter in name fields to fetch
+['attackerName','defenderName'].forEach(id=>{
+  document.getElementById(id).addEventListener('keydown', (ev)=>{
+    if(ev.key === 'Enter'){ ev.preventDefault(); document.getElementById(id).dispatchEvent(new Event('change')); }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+* {
+  margin:0px;
+  padding:0px;
+}
+#columna1 {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:200px;
+  margin-top:10px;
+  background-color:#ffff55;
+}
+#columna2 { 
+  margin-left:220px;
+  margin-right:20px;
+  margin-top:10px;  
+  background-color:#ffffbb;
+}
+
+#menuvertical {
+  padding:15px;
+  list-style-type:none;
+}
+
+#menuvertical a:hover {
+  background-color:#336699;
+}
+
+#menuvertical a {
+  width:170px;
+  text-decoration:none;
+  text-align:center;
+  color:#ff0000;
+  background-color:#f7f8e8;
+  padding:3px 2px;
+  display:block;
+}

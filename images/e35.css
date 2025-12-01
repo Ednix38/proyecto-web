@@ -1,0 +1,63 @@
+#elemento1 {
+  cursor: crosshair;
+}
+
+#elemento2 {
+  cursor: default;
+}
+
+#elemento3 {
+  cursor: pointer;
+}
+
+#elemento4 {
+  cursor: move;
+}
+
+#elemento5 {
+  cursor: e-resize;
+}
+
+#elemento6 {
+  cursor: ne-resize;
+}
+
+#elemento7 {
+  cursor: nw-resize;
+}
+
+#elemento8 {
+  cursor: n-resize;
+}
+
+#elemento9 {
+  cursor: se-resize;
+}
+
+#elemento10 {
+  cursor: sw-resize;
+}
+
+#elemento11 {
+  cursor: s-resize;
+}
+
+#elemento12 {
+  cursor: w-resize;
+}
+
+#elemento13 {
+  cursor: text;
+}
+
+#elemento14 {
+  cursor: wait;
+}
+
+#elemento15 {
+  cursor: help;
+}
+
+#elemento16 {
+  cursor: auto;
+}

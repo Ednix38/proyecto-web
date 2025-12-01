@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.imprimirNombre = function() {
+                document.write(this.nombre + ' que tiene una edad ' + this.edad + '<br>');
+            }
+        }
+
+        let vector = new Array(4);
+        vector[0] = new Persona('juan', 44);
+        vector[1] = new Persona('ana', 22);
+        vector[2] = new Persona('pedro', 44);
+        vector[3] = new Persona('marcos', 18);
+        let posmayor = 0;
+        for (let f = 1; f < vector.length; f++) {
+            if (vector[f].edad > vector[posmayor].edad) {
+                posmayor = f;
+            }
+        }
+        document.write('Personas con mayor edad:<br>');
+        for (let f = 0; f < vector.length; f++) {
+            if (vector[f].edad == vector[posmayor].edad) {
+                vector[f].imprimirNombre();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

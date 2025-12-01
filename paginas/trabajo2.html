@@ -1,0 +1,185 @@
+<!-- FILE: trabajo2.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trabajo 2 — Configuración de Entorno de Desarrollo Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ===== ENCABEZADO PRINCIPAL ===== -->
+<div id="header-placeholder"></div>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="container">
+
+    <article class="task">
+      <header>
+        <h2>Configuración de Entorno de Desarrollo Web</h2>
+        <p class="meta">
+          Fecha de entrega: <time datetime="2025-09-12">12 de septiembre de 2025</time> •
+          Tipo: Investigación escrita •
+          Unidad I
+        </p>
+      </header>
+
+      <div class="content">
+        <h3>Descripción</h3>
+        <p>El trabajo consiste en describir paso a paso cómo instalar y configurar un entorno de desarrollo web usando Visual Studio Code (VS Code), orientado al desarrollo con HTML, CSS y JavaScript.</p>
+
+        <h3>Descargar Trabajo en PDF</h3> <br>
+        <a href="../trabajos/WebT1 EdwinEnocVargasCruz DESM4B.pdf" target="_blank" class="btn">Descargar PDF</a>
+        <br><br>
+
+
+        <h3>Objetivo</h3>
+        <p>Permitir que cualquier persona, incluso sin experiencia previa, configure un entorno funcional y eficiente para empezar a programar sitios web.</p>
+
+        <h3>Introducción</h3>
+        <p>El desarrollo web moderno requiere de herramientas que faciliten escribir, organizar y ejecutar código de manera rápida y eficiente. Visual Studio Code es un editor ligero, gratuito y multiplataforma creado por Microsoft, que se ha convertido en el favorito de principiantes y profesionales. Este trabajo detalla la instalación, configuración inicial y creación de un primer proyecto web con VS Code.</p>
+
+        <h3>1. Descarga e instalación de VS Code</h3>
+        <h4>1.1 Acceso al sitio oficial</h4>
+        <p>Descarga VS Code desde su página oficial: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>. El sitio detecta automáticamente tu sistema operativo (Windows, macOS o Linux).</p>
+
+        <h4>1.2 Instalación según sistema operativo</h4>
+        <ul>
+          <li><strong>Windows:</strong>
+            <ol>
+              <li>Descargar el archivo .exe.</li>
+              <li>Ejecutar el instalador y aceptar los términos.</li>
+              <li>Seleccionar carpeta de instalación (recomendado predeterminada).</li>
+              <li>Opcional: agregar VS Code al menú contextual y PATH.</li>
+              <li>Hacer clic en "Instalar".</li>
+            </ol>
+          </li>
+          <li><strong>macOS:</strong>
+            <ol>
+              <li>Descargar archivo .dmg.</li>
+              <li>Arrastrar ícono de VS Code a la carpeta Aplicaciones.</li>
+              <li>Abrir desde Launchpad o Spotlight.</li>
+            </ol>
+          </li>
+          <li><strong>Linux (Ubuntu/Debian):</strong>
+            <ol>
+              <li>Descargar paquete .deb.</li>
+              <li>Instalar con doble clic o comando: <code>sudo dpkg -i code_versión.deb</code></li>
+              <li>Distribuciones Red Hat/Fedora usan paquete .rpm.</li>
+            </ol>
+          </li>
+        </ul>
+
+        <h3>2. Explorando la interfaz de VS Code</h3>
+        <p>Al abrir VS Code, la interfaz principal incluye:</p>
+        <ul>
+          <li><strong>Barra lateral izquierda:</strong> Archivos, búsqueda, control de extensiones.</li>
+          <li><strong>Área principal:</strong> Editor de archivos.</li>
+          <li><strong>Barra inferior:</strong> Información de codificación, errores, puerto de Live Server.</li>
+          <li><strong>Marketplace de extensiones:</strong> Instalar plugins y funcionalidades adicionales.</li>
+        </ul>
+
+        <h3>3. Personalización inicial del editor</h3>
+        <h4>3.1 Cambiar tema de color</h4>
+        <ol>
+          <li>Presionar <code>Ctrl + Shift + P</code> (Cmd + Shift + P en Mac).</li>
+          <li>Escribir "Color Theme".</li>
+          <li>Seleccionar tema predeterminado o descargar del Marketplace.</li>
+        </ol>
+        <p>Ejemplos de temas populares:</p>
+        <ul>
+          <li>Dark+ (oscuro, predeterminado)</li>
+          <li>Light+ (claro)</li>
+          <li>One Dark Pro</li>
+          <li>Dracula Official</li>
+          <li>Monokai Pro</li>
+        </ul>
+
+        <h4>3.2 Iconos de archivos</h4>
+        <ul>
+          <li>Instalar extensión <strong>Material Icon Theme</strong>.</li>
+          <li>Activar desde la configuración como tema de iconos.</li>
+        </ul>
+
+        <h3>4. Extensiones esenciales para desarrollo web</h3>
+        <ul>
+          <li><strong>Live Server:</strong> abre archivos HTML y actualiza automáticamente al guardar.</li>
+          <li><strong>HTML Snippets:</strong> fragmentos de código HTML predefinidos.</li>
+          <li><strong>JavaScript (ES6) Code Snippets:</strong> atajos para funciones modernas de JS.</li>
+          <li><strong>CSS Snippets:</strong> acelera la escritura de reglas CSS.</li>
+          <li><strong>Prettier – Code Formatter:</strong> formatea el código automáticamente al guardar.</li>
+        </ul>
+
+        <h3>5. Creación del primer proyecto web</h3>
+        <h4>5.1 Crear carpeta y archivos</h4>
+        <ol>
+          <li>Crear carpeta llamada "Aplicaciones Web".</li>
+          <li>Abrirla con VS Code.</li>
+          <li>Crear archivo <code>index.html</code>.</li>
+        </ol>
+
+        <h4>5.2 Código HTML inicial</h4>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi primer sitio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;
+  &lt;p&gt;Este es mi primer proyecto con VS Code.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h4>5.3 Probar con Live Server</h4>
+        <ul>
+          <li>Hacer clic derecho en <code>index.html</code>.</li>
+          <li>Seleccionar "Open with Live Server".</li>
+          <li>El navegador mostrará la página y se actualizará automáticamente al guardar cambios.</li>
+        </ul>
+
+        <h3>6. Configuración básica para mayor comodidad</h3>
+        <ul>
+          <li><strong>Autoguardado:</strong> Archivo → Preferencias → Configuración → "Auto Save" → Activar.</li>
+          <li><strong>Formateo automático:</strong> Instalar Prettier y activar "Format on Save".</li>
+        </ul>
+
+        <h3>7. Recomendaciones finales</h3>
+        <ul>
+          <li>Organizar el proyecto en carpetas: <code>/css</code>, <code>/js</code>, <code>/img</code>.</li>
+          <li>Probar cambios constantemente con Live Server.</li>
+          <li>Instalar nuevas extensiones conforme se avance, evitando sobrecargar el editor al inicio.</li>
+        </ul>
+
+        <h3>Conclusión</h3>
+        <p>La instalación y configuración de VS Code permite contar con un entorno profesional y amigable en minutos. Con las extensiones adecuadas y prácticas como Live Server y Prettier, incluso un principiante puede crear su primer sitio web funcional y comenzar a aprender desarrollo web de manera efectiva. Con el tiempo, se pueden integrar herramientas adicionales como control de versiones con Git y frameworks modernos.</p>
+
+        <h3>Fuentes de Información</h3>
+        <ul>
+          <li>Visual Studio Code Official: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></li>
+          <li>Guías de instalación y extensiones VS Code</li>
+          <li>Tutoriales de HTML, CSS y JavaScript</li>
+        </ul>
+
+      </div>
+      <footer>
+        <p>Autor: Enoc | Fecha de entrega: 5 de septiembre de 2025</p>
+      </footer>
+    </article>
+
+    <div class="cta">
+      <a href="parcial1.html" class="btn">Volver al Parcial I</a>
+      <a href="trabajo3.html" class="btn">Siguiente trabajo →</a>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <p>© 2025 Portafolio Académico — Universidad Tecnológica</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

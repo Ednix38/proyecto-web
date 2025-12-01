@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 40 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Problema&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;link rel=&quot;StyleSheet&quot; href=&quot;estilos.css&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;caja1&quot;&gt;
+  &lt;p&gt;Esta es la primer caja.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;caja2&quot;&gt;
+  &lt;p&gt;Esta es la segunda caja.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;caja3&quot;&gt;
+  &lt;p&gt;Esta es la tercer caja.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2>CSS</h2>
+<pre><code>#caja1{
+  position:absolute;
+  background-color:#000;
+  left:10px;
+  top:10px;
+  width:200px;
+  height:200px;
+  z-index:1;
+}
+
+#caja2{
+  position:absolute;
+  background-color:#888;
+  left:30px;
+  top:30px;
+  width:160px;
+  height:160px;
+  z-index:2;
+}
+
+#caja3{
+  position:absolute;
+  background-color:#aaa;
+  left:50px;
+  top:50px;
+  width:120px;
+  height:120px;
+  z-index:3;
+}</code></pre>
+</body>
+</html>

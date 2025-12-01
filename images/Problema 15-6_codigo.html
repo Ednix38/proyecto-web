@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-6 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /*Escribir un programa que pida ingresar coordenadas (x,y) que representan puntos en el plano. 
+                Informar cuántos puntos se han ingresado en el primer, segundo, tercer y cuarto cuadrante. 
+                Al comenzar el programa se pide que se ingrese la cantidad de puntos a procesar.*/
+
+        let cuad1 = 0;
+        let cuad2 = 0;
+        let cuad3 = 0;
+        let cuad4 = 0;
+        let cant = parseInt(prompt(&#x27;Cuantos puntos procesará:&#x27;));
+        cant = parseInt(cant);
+        for (let f = 1; f &lt;= cant; f++) {
+            let x = parseInt(prompt(&#x27;Ingrese coordenada x:&#x27;));
+            let y = parseInt(prompt(&#x27;Ingrese coordenada y:&#x27;));
+            if (x &gt; 0 &amp;&amp; y &gt; 0) {
+                cuad1++;
+            } else {
+                if (x &lt; 0 &amp;&amp; y &gt; 0) {
+                    cuad2++;
+                } else {
+                    if (x &lt; 0 &amp;&amp; y &lt; 0) {
+                        cuad3++;
+                    } else {
+                        if (x &gt; 0 &amp;&amp; y &lt; 0) {
+                            cuad4++;
+                        }
+                    }
+                }
+            }
+        }
+        document.write(&#x27;Cantidad de puntos ingresados en el primer cuadrante:&#x27; + cuad1 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de puntos ingresados en el segundo cuadrante:&#x27; + cuad2 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de puntos ingresados en el tercer cuadrante:&#x27; + cuad3 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de puntos ingresados en el cuarto cuadrante:&#x27; + cuad4 + &#x27;&lt;br&gt;&#x27;);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

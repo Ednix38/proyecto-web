@@ -1,0 +1,140 @@
+<!-- FILE: trabajo3.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trabajo 3 — Entornos de Desarrollo Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ===== ENCABEZADO PRINCIPAL ===== -->
+<div id="header-placeholder"></div>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="container">
+
+    <article class="task">
+      <header>
+        <h2>Entornos de Desarrollo Web: Herramientas del Cliente y del Servidor</h2>
+        <p class="meta">
+          Fecha de entrega: <time datetime="2025-09-12">12 de septiembre de 2025</time> •
+          Tipo: Investigación escrita •
+          Unidad I
+        </p>
+      </header>
+
+        <h3>Descargar Trabajo en PDF</h3> <br>
+        <a href="../trabajos/WebAct3 EdwinEnocVargasCruz DESM4B.pdf" target="_blank" class="btn">Descargar PDF</a>
+        <br><br>
+
+      <div class="content">
+        <h3>Introducción</h3>
+        <p>El desarrollo web combina tecnologías del lado del cliente y del lado del servidor para crear experiencias digitales seguras, eficientes y atractivas. Mientras que el cliente se encarga de la interacción directa con el usuario, el servidor gestiona la lógica, la seguridad y el almacenamiento de datos. Conocer las ventajas y desventajas de ambos lados permite tomar decisiones informadas para crear aplicaciones web robustas y sostenibles.</p>
+
+        <h3>1. Modelo Cliente-Servidor</h3>
+        <p>Este modelo describe la interacción entre dos entidades:</p>
+        <ul>
+          <li><strong>Cliente:</strong> Usuario final y su dispositivo (navegador, app móvil, software de escritorio).</li>
+          <li><strong>Servidor:</strong> Sistema que procesa solicitudes, gestiona datos y envía respuestas.</li>
+        </ul>
+        <p>La relación se basa en un flujo de peticiones y respuestas que permite organizar responsabilidades, mejorar la seguridad y garantizar eficiencia.</p>
+
+        <h4>1.1 El lado del servidor</h4>
+        <p>El backend procesa la lógica de la aplicación, autentica usuarios, gestiona bases de datos y protege la información. Aquí operan tecnologías como PHP, Python, Java, Node.js y gestores de bases de datos SQL y NoSQL.</p>
+
+        <h4>1.2 El lado del cliente</h4>
+        <p>El frontend se ejecuta en el navegador o dispositivo del usuario. Tecnologías clave incluyen HTML (estructura), CSS (estilo) y JavaScript (interactividad). Librerías y frameworks modernos permiten interfaces dinámicas y eficientes. Validaciones locales, almacenamiento en caché y APIs del navegador mejoran la experiencia.</p>
+
+        <h3>2. Herramientas del lado del cliente</h3>
+        <h4>2.1 ¿Qué son?</h4>
+        <p>Se ejecutan en el navegador del usuario y transforman datos en experiencias interactivas. Incluyen:</p>
+        <ul>
+          <li>Lenguajes: HTML, CSS, JavaScript.</li>
+          <li>Librerías y frameworks: React, Angular, Vue, Svelte, Tailwind, Sass, TypeScript, Webpack, Vite.</li>
+          <li>APIs del navegador: manipulación del DOM, almacenamiento local, geolocalización, notificaciones.</li>
+        </ul>
+
+        <h4>2.2 Ventajas</h4>
+        <ul>
+          <li><strong>Interactividad inmediata:</strong> Retroalimentación instantánea sin enviar datos al servidor.</li>
+          <li><strong>Menor carga en el servidor:</strong> Validaciones y lógica ejecutadas localmente.</li>
+          <li><strong>Funcionalidad offline:</strong> Aplicaciones web progresivas (PWA).</li>
+          <li><strong>Ecosistema rico:</strong> Gran variedad de frameworks, librerías y herramientas modernas.</li>
+        </ul>
+
+        <h4>2.3 Desventajas</h4>
+        <ul>
+          <li><strong>Peso y tiempos de carga:</strong> Bundles grandes de JavaScript pueden ralentizar dispositivos de gama baja.</li>
+          <li><strong>SEO y accesibilidad:</strong> Renderizado en cliente puede dificultar indexación y navegación accesible.</li>
+          <li><strong>Exposición de lógica:</strong> Código visible al usuario; riesgo de ataques XSS.</li>
+          <li><strong>Fragmentación y curva de aprendizaje:</strong> Ecosistema muy cambiante y compatibilidad entre navegadores.</li>
+        </ul>
+
+        <h3>3. Herramientas del lado del servidor</h3>
+        <h4>3.1 ¿Qué son?</h4>
+        <p>Procesan solicitudes del cliente y generan respuestas. Incluyen:</p>
+        <ul>
+          <li>Lenguajes y frameworks: Node.js, Django, Ruby on Rails, Laravel, Spring Boot.</li>
+          <li>Servidores web: Apache, Nginx.</li>
+          <li>Bases de datos: MySQL, PostgreSQL, MongoDB.</li>
+          <li>Infraestructura moderna: Docker, Kubernetes, servicios serverless.</li>
+        </ul>
+
+        <h4>3.2 Ventajas</h4>
+        <ul>
+          <li><strong>Seguridad:</strong> Protege datos sensibles y lógica crítica.</li>
+          <li><strong>SEO y renderizado rápido:</strong> HTML listo para mostrar desde el servidor.</li>
+          <li><strong>Poder de procesamiento:</strong> Capacidad de cálculos complejos y grandes volúmenes de datos.</li>
+          <li><strong>Escalabilidad:</strong> Balanceo de carga, cachés y réplicas de bases de datos.</li>
+        </ul>
+
+        <h4>3.3 Desventajas</h4>
+        <ul>
+          <li><strong>Costos de infraestructura:</strong> Más lógica en servidor implica mayor gasto en hardware y servicios.</li>
+          <li><strong>Latencia:</strong> Cada interacción requiere comunicación ida y vuelta.</li>
+          <li><strong>Complejidad técnica:</strong> Configuración de servidores, bases de datos, seguridad y monitoreo.</li>
+          <li><strong>Riesgos de ataques:</strong> SQL Injection, DDoS y otros ciberataques.</li>
+        </ul>
+
+        <h3>4. Comparación general</h3>
+        <p>Ninguno sustituye al otro; se complementan:</p>
+        <ul>
+          <li><strong>Cliente fuerte, servidor ligero:</strong> SPAs, dashboards, editores online.</li>
+          <li><strong>Servidor fuerte, cliente ligero:</strong> Blogs, sitios de noticias, e-commerce orientado a SEO.</li>
+          <li><strong>Modelos híbridos (SSR + CSR / SSG + CSR):</strong> Contenido inicial rápido y dinámicas ricas en cliente.</li>
+        </ul>
+
+        <h3>Conclusión</h3>
+        <p>El desarrollo web requiere equilibrar correctamente las herramientas del cliente y del servidor. Cada lado tiene ventajas y limitaciones; combinarlos de manera estratégica asegura aplicaciones eficientes, seguras y escalables, optimizando la experiencia del usuario.</p>
+
+        <h3>Fuentes de Información</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview" target="_blank">Mozilla Developer Network (MDN)</a></li>
+          <li><a href="https://www.daemon4.com/empresa/noticias/arquitectura-cliente-servidor/" target="_blank">Daemon4 — Arquitectura cliente-servidor</a></li>
+          <li><a href="https://www.cloudflare.com/es-es/learning/serverless/glossary/client-side-vs-server-side/" target="_blank">Cloudflare — Diferencias entre cliente y servidor</a></li>
+          <li><a href="https://www.hostinet.com/formacion/general/lenguajes-del-lado-servidor-o-cliente/" target="_blank">Hostinet — Lenguajes del lado del servidor o cliente</a></li>
+          <li><a href="https://blog.hubspot.es/website/frontend-y-backend" target="_blank">HubSpot Blog — Frontend y Backend</a></li>
+          <li><a href="https://aws.amazon.com/es/compare/the-difference-between-frontend-and-backend/" target="_blank">Amazon Web Services — Diferencias frontend/backend</a></li>
+        </ul>
+      </div>
+
+      <footer>
+        <p>Autor: Enoc | Fecha de entrega: 5 de septiembre de 2025</p>
+      </footer>
+    </article>
+
+    <div class="cta">
+      <a href="parcial1.html" class="btn">Volver al Parcial I</a>
+      <a href="trabajo4.html" class="btn">Siguiente trabajo →</a>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <p>© 2025 Portafolio Académico — Universidad Tecnológica</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

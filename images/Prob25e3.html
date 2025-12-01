@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form>
+        <p>Ingrese nombre:<input type="text" id="nombre"></p>
+        <p>Ingrese apellido:<input type="text" id="apellido"></p>
+        <p><input type="button" value="Concatenar datos ingresados" onClick="concatenar()"></p>
+        <p><input type="text" id="resultado"></p>
+    </form>
+
+    <script>
+        function concatenar() {
+            let nom = document.getElementById('nombre').value;
+            let ape = document.getElementById('apellido').value;
+            document.getElementById('resultado').value = nom + ape;
+        }
+    </script>
+
+</body>
+
+</html>

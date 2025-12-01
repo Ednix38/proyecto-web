@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 27-3 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        &lt;p&gt;Como se dice rojo en ingles:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;pregunta1&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;blue&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;green&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;red&lt;/option&gt;
+        &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt; Como se dice ventana en ingles:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;pregunta2&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;window&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;door&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;bedroom&lt;/option&gt;
+        &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt; Como se dice gato en ingles:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;pregunta3&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;dog&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;cat&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;lion&lt;/option&gt;
+        &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt; Como se dice hombre en ingles:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;pregunta4&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;women&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;man&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;child&lt;/option&gt;
+        &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;Controlar&quot; onClick=&quot;verificar()&quot;&gt;&lt;/p&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar() {
+            let correctas = 0;
+            let ele1 = document.getElementById(&#x27;pregunta1&#x27;);
+            let ele2 = document.getElementById(&#x27;pregunta2&#x27;);
+            let ele3 = document.getElementById(&#x27;pregunta3&#x27;);
+            let ele4 = document.getElementById(&#x27;pregunta4&#x27;);
+            if (ele1.options[ele1.selectedIndex].value == 3) {
+                correctas++;
+            }
+            if (ele2.options[ele2.selectedIndex].value == 1) {
+                correctas++;
+            }
+            if (ele3.options[ele3.selectedIndex].value == 2) {
+                correctas++;
+            }
+            if (ele4.options[ele4.selectedIndex].value == 2) {
+                correctas++;
+            }
+            alert(&#x27;Cantidad de respuestas correctas:&#x27; + correctas);
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

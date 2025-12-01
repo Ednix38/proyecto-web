@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-8 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /*Se cuenta con la siguiente información:
+                  Las edades de 5 estudiantes del turno mañana.
+                  Las edades de 6 estudiantes del turno tarde.
+                  Las edades de 11 estudiantes del turno noche.
+                  Las edades de cada estudiante deben ingresarse por teclado.
+                  a) Obtener el promedio de las edades de cada turno (tres promedios)
+                  b) Imprimir dichos promedios (promedio de cada turno).
+                  c) Mostrar por pantalla un mensaje que indique cual de los 
+                     tres turnos tiene un promedio de edades mayor. */
+
+        let suma1 = 0;
+        for (let f = 1; f &lt;= 5; f++) {
+            let edad = parseInt(prompt(&#x27;Edad de estudiante del turno mañana:&#x27;));
+            suma1 = suma1 + edad;
+        }
+        let suma2 = 0;
+        for (let f = 1; f &lt;= 6; f++) {
+            let edad = parseInt(prompt(&#x27;Edad de estudiante del turno tarde:&#x27;));
+            suma2 = suma2 + edad;
+        }
+        let suma3 = 0;
+        for (let f = 1; f &lt;= 11; f++) {
+            let edad = parseInt(prompt(&#x27;Edad de estudiante del turno noche:&#x27;));
+            suma3 = suma3 + edad;
+        }
+        let promedio1 = suma1 / 5;
+        let promedio2 = suma2 / 6;
+        let promedio3 = suma3 / 11;
+        document.write(&#x27;Promedio de edades de alumnos del turno mañana:&#x27; + promedio1 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Promedio de edades de alumnos del turno tarde:&#x27; + promedio2 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Promedio de edades de alumnos del turno noche:&#x27; + promedio3 + &#x27;&lt;br&gt;&#x27;);
+        if (promedio1 &gt; promedio2 &amp;&amp; promedio1 &gt; promedio3) {
+            document.write(&#x27;El turno mañana tiene un promedio mayor de edades&#x27;);
+        } else {
+            if (promedio2 &gt; promedio3) {
+                document.write(&#x27;El turno tarde tiene un promedio mayor de edades&#x27;);
+            } else {
+                document.write(&#x27;El turno noche tiene un promedio mayor de edades&#x27;);
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

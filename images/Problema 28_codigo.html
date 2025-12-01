@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 28 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        Seleccione los deportes que practica:&lt;br&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;checkbox1&quot;&gt;Fútbol&lt;br&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot;&gt;Básquet&lt;br&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot;&gt;Tenis&lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Controlar&quot; onClick=&quot;verificar()&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar() {
+            let deportes = &#x27;&#x27;;
+            if (document.getElementById(&quot;checkbox1&quot;).checked) {
+                deportes = deportes + &#x27;Fútbol &#x27;;
+            }
+            if (document.getElementById(&quot;checkbox2&quot;).checked) {
+                deportes = deportes + &#x27;Básquet &#x27;;
+            }
+            if (document.getElementById(&quot;checkbox3&quot;).checked) {
+                deportes = deportes + &#x27;Tenis&#x27;;
+            }
+            alert(&#x27;Los deportes seleccionados son:&#x27; + deportes);
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

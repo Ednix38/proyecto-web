@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <td onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="http://www.outlook.com">Outlook</a>
+            </td>
+            <td onMouseOver="pintar(this,'#00ff00')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="http://www.yahoo.com">Yahoo</a>
+            </td>
+            <td onMouseOver="pintar(this,'#0000ff')" onMouseOut="pintar(this,'#ffffff')">
+                <a href="http://www.gmail.com">GMail</a>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function pintar(objeto, col) {
+            objeto.style.backgroundColor = col;
+        }
+    </script>
+
+</body>
+
+</html>

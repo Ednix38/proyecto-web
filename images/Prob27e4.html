@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de JavaScript</title>
+</head>
+<body>
+    <h2>Examen de Preguntas</h2>
+
+    <div>
+        <p>1. ¿Cuál es el resultado de 2 + 2?</p>
+        <select id="p1">
+            <option value="">-- Selecciona una --</option>
+            <option value="3">3</option>
+            <option value="4">4</option> 
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <div>
+        <p>2. ¿Capital de México?</p>
+        <select id="p2">
+            <option value="">-- Selecciona una --</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="CDMX">CDMX</option> 
+            <option value="Monterrey">Monterrey</option>
+        </select>
+    </div>
+
+    <div>
+        <p>3. ¿HTML sirve para...?</p>
+        <select id="p3">
+            <option value="">-- Selecciona una --</option>
+            <option value="backend">Programar el backend</option>
+            <option value="estructura">Estructurar páginas web</option> 
+            <option value="base">Crear bases de datos</option>
+        </select>
+    </div>
+
+    <div>
+        <p>4. ¿Qué significa CSS?</p>
+        <select id="p4">
+            <option value="">-- Selecciona una --</option>
+            <option value="capa">Capa de servidor seguro</option>
+            <option value="hojas">Hojas de estilo en cascada</option> 
+            <option value="codigo">Código de sistema seguro</option>
+        </select>
+    </div>
+
+    <br>
+    <button onclick="corregir()">Corregir</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function corregir() {
+            let correctas = 0;
+
+            if (document.getElementById("p1").value === "4") correctas++;
+            if (document.getElementById("p2").value === "CDMX") correctas++;
+            if (document.getElementById("p3").value === "estructura") correctas++;
+            if (document.getElementById("p4").value === "hojas") correctas++;
+
+            document.getElementById("resultado").innerText =
+                "Correctas: " + correctas + " | Incorrectas: " + (4 - correctas);
+        }
+    </script>
+    
+</body>
+</html>

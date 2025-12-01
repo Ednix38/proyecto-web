@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 21-2 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        function cargarVectores(vec1, vec2) {
+
+            for (let f = 0; f &lt; vec1.length; f++) {
+                let valor = prompt(&#x27;Ingrese componente del primer vector:&#x27;, &#x27;&#x27;);
+                vec1[f] = parseInt(valor);
+            }
+            for (let f = 0; f &lt; vec2.length; f++) {
+                let valor = prompt(&#x27;Ingrese componente del segundo vector:&#x27;, &#x27;&#x27;);
+                vec2[f] = parseInt(valor);
+            }
+        }
+
+        function sumarVectores(vec1, vec2, vecsuma) {
+            for (let f = 0; f &lt; vecsuma.length; f++) {
+                vecsuma[f] = vec1[f] + vec2[f];
+            }
+        }
+
+        function imprimirVector(vecsuma) {
+            for (let f = 0; f &lt; vecsuma.length; f++) {
+                document.write(vecsuma[f] + &#x27; &#x27;);
+            }
+        }
+
+        let vec1 = new Array(5);
+        let vec2 = new Array(5);
+        let vecsuma = new Array(5);
+        cargarVectores(vec1, vec2);
+        sumarVectores(vec1, vec2, vecsuma);
+        imprimirVector(vecsuma);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

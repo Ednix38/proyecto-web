@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conclusiones — Portafolio UTA</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="container">
+
+    <!-- Título principal -->
+    <section class="intro">
+        <h2>Conclusiones de la Materia — Aplicaciones Web</h2>
+        <p class="lead">
+            A continuación presento una reflexión personal sobre lo aprendido durante la materia, 
+            los retos encontrados y las habilidades que pude desarrollar a lo largo del curso.
+        </p>
+    </section>
+
+    <!-- Conclusiones personales -->
+    <section class="conclusiones">
+        <h3>Conclusiones Personales</h3>
+        <p>
+            La materia de Aplicaciones Web me permitió comprender de forma práctica cómo funcionan las
+            tecnologías fundamentales que dan vida a la web. Desde los primeros ejercicios con HTML,
+            donde aprendí a estructurar contenido de manera clara y semántica, hasta la integración de
+            estilos avanzados con CSS y la creación de interactividad usando JavaScript.
+        </p>
+        <p>
+            Al inicio todo parecía simple, pero conforme avanzaban las prácticas me di cuenta de lo
+            importante que es escribir código limpio, organizado y fácil de mantener. También aprendí
+            que el diseño responsivo no es solo un plus, sino una necesidad para cualquier proyecto
+            moderno.
+        </p>
+        <p>
+            Esta materia me ayudó a desarrollar una mentalidad más lógica y creativa al momento de
+            resolver problemas. Pude experimentar, equivocarme, corregir, y entender mejor cómo
+            se construyen las aplicaciones reales que usamos en Internet.
+        </p>
+    </section>
+
+    <!-- Habilidades adquiridas -->
+    <section class="habilidades">
+        <h3>Habilidades Adquiridas</h3>
+        <ul>
+            <li>Comprensión sólida de HTML semántico y estructura de documentos web.</li>
+            <li>Diseño de interfaces y estilos responsivos utilizando CSS moderno.</li>
+            <li>Uso de JavaScript para manipulación del DOM, eventos e interactividad.</li>
+            <li>Buenas prácticas en organización de código y documentación.</li>
+            <li>Capacidad para crear proyectos completos desde cero.</li>
+        </ul>
+    </section>
+
+    <!-- Importancia de la materia -->
+    <section class="importancia">
+        <h3>Importancia de la Materia</h3>
+        <p>
+            Esta asignatura es una base fundamental para cualquier estudiante de tecnologías de la
+            información o programación. Entender cómo funciona la web es clave para poder avanzar
+            hacia áreas más complejas como frameworks front-end, desarrollo backend, consumo de APIs,
+            bases de datos y arquitectura de software.
+        </p>
+        <p>
+            Además, fomenta habilidades transversales como la creatividad, el pensamiento crítico y
+            la capacidad de implementar soluciones funcionales que otras personas pueden usar.
+        </p>
+    </section>
+
+    <!-- Cierre -->
+    <section class="cierre">
+        <h3>Reflexión Final</h3>
+        <p>
+            Después de completar esta materia, me siento más preparado para seguir aprendiendo y 
+            construyendo proyectos web reales. Aplicaciones Web no solo me brindó conocimientos
+            técnicos, sino también una forma distinta de ver cómo se construyen las herramientas
+            digitales que usamos todos los días.
+        </p>
+        <p>
+            Me quedo con la motivación de continuar desarrollando mis habilidades y seguir creando 
+            proyectos que combinen técnica, diseño y funcionalidad.
+        </p>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">© <span id="year"></span> — Portafolio educativo</div>
+</footer>
+
+<script>
+// Footer: año actual
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Marca el enlace activo en el nav según el archivo actual
+(function(){
+    const nav = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop() || 'conclusiones.html';
+    nav.forEach(a => {
+        if(a.getAttribute('href') === path) a.classList.add('active');
+    });
+})();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

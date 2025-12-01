@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-5 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /* Realizar un programa que lea los lados de 4 triángulos, e informar:
+                          a)	De cada uno de ellos, qué tipo de triángulo es: 
+                                equilátero (tres lados iguales), isósceles (dos lados iguales), o escaleno (ningún lado igual)
+                          b)	Cantidad de triángulos de cada tipo.
+                          c)	Tipo de triángulo del que hay menor cantidad. */
+
+        let cant1 = 0;
+        let cant2 = 0;
+        let cant3 = 0;
+        for (let f = 1; f &lt;= 4; f++) {
+            let lado1 = parseInt(prompt(&#x27;Ingrese primer lado:&#x27;));
+            let lado2 = parseInt(prompt(&#x27;Ingrese segundo lado:&#x27;));
+            let lado3 = parseInt(prompt(&#x27;Ingrese tercer lado:&#x27;));
+            if (lado1 == lado2 &amp;&amp; lado1 == lado3) {
+                document.write(&#x27;Triángulo equilatero.&lt;br&gt;&#x27;);
+                cant1++;
+            } else {
+                if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                    document.write(&#x27;Triángulo isósceles.&lt;br&gt;&#x27;);
+                    cant2++;
+                } else {
+                    document.write(&#x27;Triángulo escaleno.&lt;br&gt;&#x27;);
+                    cant3++;
+                }
+            }
+        }
+        document.write(&#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de triángulos equiláteros:&#x27; + cant1 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de triángulos isósceles:&#x27; + cant2 + &#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de triángulos escalenos:&#x27; + cant3 + &#x27;&lt;br&gt;&#x27;);
+        if (cant1 &lt; cant2 &amp;&amp; cant1 &lt; cant3) {
+            document.write(&#x27;Se ingresaron menos triángulos equiláteros&#x27;);
+        } else {
+            if (cant2 &lt; cant3) {
+                document.write(&#x27;Se ingresaron menos triángulos isósceles&#x27;);
+            } else {
+                document.write(&#x27;Se ingresaron menos triángulos escalenos&#x27;);
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

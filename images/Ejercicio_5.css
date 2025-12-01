@@ -1,0 +1,17 @@
+#cabecera {
+  background-color:#888;
+  color:#ffffff;
+  font-family:Courier;
+}
+
+#cuerpo {
+  background-color:#eee;
+  font-family:Arial;
+  text-indent:20px;
+}
+
+#pie {
+  background-color:#888;  
+  text-align:center;
+  color:#eedd00;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios HTML</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+.project .card {
+  flex: 1 1 calc(33% - 15px);
+  min-width: 250px;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn:hover {
+  background: #0056b3;
+}
+@media (max-width: 1024px) {
+  .project .card {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+@media (max-width: 600px) {
+  .project .card {
+    flex: 1 1 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="container">
+  <center><h2>Ejercicios de HTML</h2></center>
+  <center><p class="lead center">Utilización de etiquetas básicas de HTML, enlaces y listas.</p></center>
+  <div class="project">
+
+    <div class="card">
+      <div class="card-header"><h3>Conceptos basicos 1</h3></div>
+      <div class="card-footer">
+        <a href="../images/Conceptos_basicos_1.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Conceptos_basicos_1_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Conceptos_basicos_1.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Conceptos basicos 2</h3></div>
+      <div class="card-footer">
+        <a href="../images/Conceptos_basicos_2.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Conceptos_basicos_2_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Conceptos_basicos_2.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Conceptos basicos 3</h3></div>
+      <div class="card-footer">
+        <a href="../images/Conceptos_basicos_3.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Conceptos_basicos_3_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Conceptos_basicos_3.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Conceptos basicos 4</h3></div>
+      <div class="card-footer">
+        <a href="../images/Conceptos_basicos_4.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Conceptos_basicos_4_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Conceptos_basicos_4.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Conceptos basicos 5</h3></div>
+      <div class="card-footer">
+        <a href="../images/Conceptos_basicos_5.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Conceptos_basicos_5_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Conceptos_basicos_5.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Enlaces</h3></div>
+      <div class="card-footer">
+        <a href="../images/Enlaces.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Enlaces_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Enlaces.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Listas 1</h3></div>
+      <div class="card-footer">
+        <a href="../images/Listas_1.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Listas_1_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Listas_1.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header"><h3>Listas 2</h3></div>
+      <div class="card-footer">
+        <a href="../images/Listas_2.html" target="_blank" class="btn">Ver Resultado</a>
+        <a href="../images/Listas_2_codigo.html" target="_blank" class="btn">Ver Código HTML</a>
+        <a href="../images/Listas_2.html" download class="btn">Descargar HTML</a>
+      </div>
+    </div>
+    
+  </div>
+<footer>
+  <center><p>Autor: Enoc | Fecha de entrega: 19 de septiembre de 2025</p></center>
+</footer>
+<center>
+  <div class="cta">
+    <a href="parcial1.html" class="btn">Volver al Parcial I</a>
+    <a href="trabajo5.html" class="btn">Siguiente trabajo →</a>
+  </div>
+</center>
+</main>
+
+<footer class="site-footer">
+  <center><p>© 2025 Portafolio Académico — Unidad I Desarrollo Front End</p></center>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+

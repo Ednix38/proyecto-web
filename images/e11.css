@@ -1,0 +1,17 @@
+h1 {
+  font-family:Helvetica;
+  color:#0000aa;
+  text-align:center;
+}
+
+h2 {
+  font-family:Helvetica;
+  color:#0000bb;
+}
+
+p {
+  text-indent:10px;
+  color:#444444;
+  word-spacing:4px;
+  letter-spacing:2px;
+}

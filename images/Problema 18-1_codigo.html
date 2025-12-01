@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 18-1 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        //Confeccionar una función a la cual le envíe tres enteros 
+        //y retorne el mayor de ellos.
+
+        function retornarMayor(x1, x2, x3) {
+            if (x1 &gt; x2 &amp;&amp; x1 &gt; x3) {
+                return x1;
+            } else {
+                if (x2 &gt; x3) {
+                    return x2;
+                } else {
+                    return x3;
+                }
+            }
+        }
+
+        let valor1 = parseInt(prompt(&#x27;Ingrese primer valor:&#x27;));
+        let valor2 = parseInt(prompt(&#x27;Ingrese segundo valor:&#x27;));
+        let valor3 = parseInt(prompt(&#x27;Ingrese tercer valor:&#x27;));
+        document.write(&#x27;Los tres valores ingresados son &#x27; + valor1 + &#x27; &#x27; + valor2 + &#x27; &#x27; + valor3 + &#x27;&lt;br&gt;&#x27;);
+        let may = retornarMayor(valor1, valor2, valor3);
+        document.write(&#x27;El mayor de los tres es :&#x27; + may);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

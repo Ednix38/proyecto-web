@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 13-7 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        let cantpares = 0;
+        let cantimpares = 0;
+        let x = 0;
+        let valor;
+        while (x &lt; 5) {
+            valor = parseInt(prompt(&#x27;Ingrese un valor&#x27;));
+            if (valor % 2 == 0) {
+                cantpares = cantpares + 1;
+            } else {
+                cantimpares = cantimpares + 1;
+            }
+            x = x + 1;
+        }
+        document.write(&#x27;Cantidad de valores pares ingresados:&#x27; + cantpares);
+        document.write(&#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de valores impares ingresados:&#x27; + cantimpares);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

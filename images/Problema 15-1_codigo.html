@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-1 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        let conta1 = 0;
+        for (let f = 1; f &lt;= 3; f++) {
+            let base = parseInt(prompt(&#x27;Ingrese la base:&#x27;));
+            let altura = parseInt(prompt(&#x27;Ingrese la altura:&#x27;));
+            let superficie = base * altura / 2;
+            if (superficie &gt; 12) {
+                conta1++;
+            }
+            document.write(&#x27;Triángulo nro:&#x27; + f + &#x27;&lt;br&gt;&#x27;);
+            document.write(&#x27;Base:&#x27; + base + &#x27;&lt;br&gt;&#x27;);
+            document.write(&#x27;Altura:&#x27; + altura + &#x27;&lt;br&gt;&#x27;);
+            document.write(&#x27;Superficie:&#x27; + superficie + &#x27;&lt;br&gt;&#x27;);
+        }
+        document.write(&#x27;Cantidad de triángulos con superficie mayor a 12:&#x27; + conta1);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

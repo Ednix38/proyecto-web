@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabajo — Visualización de Proyecto Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ajuste para iframe gigante */
+    .iframe-container {
+      width: 100%;
+      height: 90vh; /* Ocupa casi toda la altura de la pantalla */
+      margin-top: 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+<div id="header-placeholder"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+    <article class="task">
+      <header>
+        <h2>Proyecto Web Integrador</h2>
+        <p class="meta">
+          Fecha de entrega: <time datetime="2025-09-25">25 de septiembre de 2025</time> •
+          Tipo: Proyecto Web • Unidad II
+        </p>
+      </header>
+
+      <div class="content">
+        <p class="lead center">
+          Este trabajo consiste en visualizar un proyecto web completo alojado en una URL externa. A través del iframe se puede interactuar con la página directamente desde el portafolio, permitiendo revisar su funcionalidad y diseño.
+        </p>
+        <p>Link del proyecto: <a href="https://view.genially.com/68cda11862f60471e01b2f3a/interactive-content-etiquetas-de-html?classId=4ed48890-731d-45f3-83c6-5ef5685ab437&assignmentId=520bec12-7b55-4d88-aed3-c9e9c9801801&submissionId=d34d5af8-546b-407c-4446-018dda255415">Proyecto Etiquetas de HTML</a></p>
+
+        <div class="iframe-container">
+          <iframe src="https://view.genially.com/68cda11862f60471e01b2f3a/interactive-content-etiquetas-de-html?classId=4ed48890-731d-45f3-83c6-5ef5685ab437&assignmentId=520bec12-7b55-4d88-aed3-c9e9c9801801&submissionId=d34d5af8-546b-407c-4446-018dda255415" title="Proyecto Web"></iframe>
+        </div>
+      </div>
+
+      <footer>
+        <p>Autor: Enoc | Fecha de entrega: 25 de septiembre de 2025</p>
+      </footer>
+    </article>
+      <footer>
+        <p>Autor: Enoc | Fecha de entrega: 5 de septiembre de 2025</p>
+      </footer>
+    </article>
+
+    <div class="cta">
+      <a href="parcial1.html" class="btn">Volver al Parcial I</a>
+      <a href="trabajo6.html" class="btn">Regresar al trabajo 6</a>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <p>© 2025 Portafolio Académico — Universidad Tecnológica</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

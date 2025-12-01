@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 23-6 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        function mitad(frase) {
+            document.write(&#x27;Mitad inicial de la frase:&#x27;);
+            for (let f = 0; f &lt; frase.length / 2; f++) {
+                document.write(frase.charAt(f));
+            }
+            document.write(&#x27;&lt;br&gt;&lt;br&gt;&#x27;);
+        }
+
+        function ultimoCaracter(frase) {
+            document.write(&#x27;Ultimo carácter:&#x27;);
+            document.write(frase.charAt(frase.length - 1));
+            document.write(&#x27;&lt;br&gt;&lt;br&gt;&#x27;);
+        }
+
+        function imprimirInverso(frase) {
+            document.write(&#x27;En forma inversa:&#x27;);
+            for (let f = 0; f &lt; frase.length; f++) {
+                document.write(frase.charAt(frase.length - f - 1));
+            }
+            document.write(&#x27;&lt;br&gt;&lt;br&gt;&#x27;);
+        }
+
+        function imprimirConGuion(frase) {
+            document.write(&#x27;Separados por guión:&#x27;);
+            for (let f = 0; f &lt; frase.length; f++) {
+                document.write(frase.charAt(f) + &#x27;-&#x27;);
+            }
+            document.write(&#x27;&lt;br&gt;&lt;br&gt;&#x27;);
+        }
+
+        function cantidadVocales(frase) {
+            let cant = 0;
+            for (let f = 0; f &lt; frase.length; f++) {
+                if (frase.charAt(f) == &#x27;a&#x27; ||
+                    frase.charAt(f) == &#x27;e&#x27; ||
+                    frase.charAt(f) == &#x27;i&#x27; ||
+                    frase.charAt(f) == &#x27;o&#x27; ||
+                    frase.charAt(f) == &#x27;u&#x27; ||
+                    frase.charAt(f) == &#x27;A&#x27; ||
+                    frase.charAt(f) == &#x27;E&#x27; ||
+                    frase.charAt(f) == &#x27;I&#x27; ||
+                    frase.charAt(f) == &#x27;O&#x27; ||
+                    frase.charAt(f) == &#x27;U&#x27;) {
+                    cant++;
+                }
+            }
+            document.write(&#x27;Cantidad de vocales:&#x27; + cant);
+        }
+
+
+        let frase = prompt(&#x27;Ingrese una palabra o frase:&#x27;);
+        document.write(frase);
+        document.write(&#x27;&lt;br&gt;&lt;br&gt;&#x27;);
+        mitad(frase);
+        ultimoCaracter(frase);
+        imprimirInverso(frase);
+        imprimirConGuion(frase);
+        cantidadVocales(frase);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

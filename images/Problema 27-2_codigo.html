@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 27-2 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        &lt;p&gt; Procesador:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;procesador&quot;&gt;
+                &lt;option value=&quot;400&quot;&gt;Intel I3&lt;/option&gt;
+                &lt;option value=&quot;600&quot;&gt;Intel I5&lt;/option&gt;
+                &lt;option value=&quot;800&quot;&gt;Intel I7&lt;/option&gt;
+         &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt; Procesador:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;monitor&quot;&gt;
+                &lt;option value=&quot;250&quot;&gt;Monitor Samsung 20&#x27;&lt;/option&gt;
+                &lt;option value=&quot;350&quot;&gt;Monitor Samsung 22&#x27;&lt;/option&gt;
+                &lt;option value=&quot;550&quot;&gt;Monitor Samsung 26&#x27;&lt;/option&gt;
+        &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt; Disco duro:&lt;/p&gt;
+        &lt;p&gt;&lt;select id=&quot;discoduro&quot;&gt;
+                &lt;option value=&quot;300&quot;&gt;Disco Duro 500 Gb&lt;/option&gt;
+                &lt;option value=&quot;440&quot;&gt;Disco Duro 1 Tb&lt;/option&gt;
+                &lt;option value=&quot;500&quot;&gt;Disco Duro 3 Tb&lt;/option&gt;
+           &lt;/select&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;Calcular Presupuesto&quot; onClick=&quot;calcularPresupuesto()&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; id=&quot;resultado&quot;&gt;&lt;/p&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function calcularPresupuesto() {
+            let ele1 = document.getElementById(&#x27;procesador&#x27;)
+            let precio1 = ele1.options[ele1.selectedIndex].value;
+            let ele2 = document.getElementById(&#x27;monitor&#x27;)
+            let precio2 = ele2.options[ele2.selectedIndex].value;
+            let ele3 = document.getElementById(&#x27;discoduro&#x27;)
+            let precio3 = ele3.options[ele3.selectedIndex].value;
+            precio1 = parseInt(precio1);
+            precio2 = parseInt(precio2);
+            precio3 = parseInt(precio3);
+            let suma = precio1 + precio2 + precio3;
+            document.getElementById(&#x27;resultado&#x27;).value = suma;
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

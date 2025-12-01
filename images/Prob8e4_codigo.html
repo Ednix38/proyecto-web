@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Prob8e4 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        let nombre;
+        nombre = prompt(&#x27;Ingrese el nombre del postulante&#x27;);
+        let cantpreguntas;
+        cantpreguntas = parseInt(prompt(&#x27;Cantidad de preguntas del test&#x27;));
+        let cantcorrectas;
+        cantcorrectas = parseInt(prompt(&#x27;Cantidad de preguntas correctas&#x27;));
+        let porcentaje;
+        porcentaje = cantcorrectas / cantpreguntas * 100;
+        if (porcentaje &gt;= 90) {
+            document.write(&#x27;Nivel superior&#x27;);
+        } else {
+            if (porcentaje &gt;= 75) {
+                document.write(&#x27;Nivel medio&#x27;);
+            } else {
+                if (porcentaje &gt;= 50) {
+                    document.write(&#x27;Nivel regular&#x27;);
+                } else {
+                    document.write(&#x27;Fuera de nivel&#x27;);
+                }
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

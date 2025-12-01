@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-4 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /*Confeccionar un programa que permita ingresar un valor del 1 al 10 y 
+                nos muestre la tabla de multiplicar del mismo (los primeros 12 términos)
+                Ejemplo: Si ingreso 3 deberá aparecer en pantalla los valores 3, 6, 9, hasta el 36.*/
+        let tabla = parseInt(prompt(&#x27;Ingrese un valor del 1 al 10:&#x27;, &#x27;&#x27;));
+        let conta = tabla;
+        for (let f = 1; f &lt;= 12; f++) {
+            document.write(conta + &#x27; &#x27;);
+            conta = conta + tabla;
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt; </code></pre>
+</body>
+</html>

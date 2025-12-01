@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 13-1 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        let x = 0; 
+        let cant1 = 0;
+        let cant2 = 0;
+        while (x &lt; 10) {
+            let nota;
+            nota = parseInt(prompt(&#x27;Ingrese nota&#x27;));
+            if (nota &gt;= 7) {
+                cant1 = cant1 + 1;
+            } else {
+                cant2 = cant2 + 1;
+            }
+            x = x + 1;
+        }
+        document.write(&#x27;Cantidad de alumnos con notas mayores o iguales a 7:&#x27; + cant1);
+        document.write(&#x27;&lt;br&gt;&#x27;);
+        document.write(&#x27;Cantidad de alumnos con notas menores a 7:&#x27; + cant2);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

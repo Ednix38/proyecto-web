@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let frase = prompt('Ingrese una oración:');
+        document.write(frase + '<br><br>');
+        let palabra = prompt('Ingrese una palabra:');
+        if (frase.indexOf(palabra) != -1) {
+            document.write('La frase ingresada contiene la palabra: ' + palabra +
+                ' a partir de la posición ' + frase.indexOf(palabra));
+        } else {
+            document.write('La frase ingresada no contiene la palabra: ' + palabra);
+        }
+    </script>
+
+</body>
+
+</html>

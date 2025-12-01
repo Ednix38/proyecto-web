@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 30 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        Ingrese nombre:
+        &lt;input type=&quot;text&quot; id=&quot;nombre&quot;&gt;&lt;br&gt; Ingrese mail:
+        &lt;input type=&quot;text&quot; id=&quot;mail&quot;&gt;&lt;br&gt; Comentarios:
+        &lt;br&gt;
+        &lt;textarea id=&quot;comentarios&quot; rows=&quot;20&quot; cols=&quot;100&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;confirmar&quot; onClick=&quot;verificar()&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar() {
+            let nombre = document.getElementById(&#x27;nombre&#x27;).value;
+            let mail = document.getElementById(&#x27;mail&#x27;).value;
+            let comentarios = document.getElementById(&#x27;comentarios&#x27;).value;
+            alert(nombre + &#x27;\n&#x27; + mail + &#x27;\n&#x27; + comentarios);
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

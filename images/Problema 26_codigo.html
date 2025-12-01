@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 26 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;form&gt;
+        Ingrese clave:
+        &lt;input type=&quot;password&quot; id=&quot;clave1&quot;&gt;
+        &lt;br&gt; Repita la clave:
+        &lt;input type=&quot;password&quot; id=&quot;clave2&quot;&gt;
+        &lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;Verificar clave&quot; onClick=&quot;verificar()&quot;&gt;
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        function verificar() {
+            let clave1 = document.getElementById(&#x27;clave1&#x27;).value;
+            let clave2 = document.getElementById(&#x27;clave2&#x27;).value;
+            if (clave1 == clave2) {
+                alert(&#x27;Las dos claves ingresadas son iguales&#x27;);
+            } else {
+                alert(&#x27;Las dos claves ingresadas son distintas&#x27;);
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 39 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Problema&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;link rel=&quot;StyleSheet&quot; href=&quot;estilos.css&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;cabecera&quot;&gt;
+&lt;p&gt;Cabecera de la página&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;columna1&quot;&gt;
+&lt;p&gt;Columna 1.&lt;/p&gt;
+&lt;p&gt;Columna 1.&lt;/p&gt;
+&lt;p&gt;Columna 1.&lt;/p&gt;
+&lt;p&gt;Columna 1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2>CSS</h2>
+<pre><code>* {
+  margin: 0;
+  padding: 0;
+}
+
+#cabecera {
+  background-color: #f99;
+  font-family: Verdana, sans-serif;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 👉 hace que el rojo llegue hasta el borde */
+  height: 50px;
+}
+
+#columna1 {
+  background-color: #ff0;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0;
+  top: 51px;
+  min-height: 700px;
+  width: 200px; /* opcional: define ancho de columna */
+}
+
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 42 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Problema&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;link rel=&quot;StyleSheet&quot; href=&quot;estilos.css&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;columna1&quot;&gt;
+&lt;div id=&quot;menuvertical&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Opcion 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Opcion 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Opcion 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Opcion 4&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;columna2&quot;&gt;
+Aca va el contenido de la columna 2. Aca va el contenido 
+de la columna 2.Aca va el contenido de la columna 2.Aca
+ va el contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2.Aca va
+ el contenido de la columna 2.Aca va el contenido
+ de la columna 2.Aca va el contenido de la columna
+ 2.Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2.
+ Aca va el contenido de la columna 2.Aca va el contenido 
+ de la columna 2.Aca va el contenido de la columna
+ 2.Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2
+ .Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de 
+ la columna 2.Aca va el contenido de la columna 2.
+ Aca va el contenido de la columna 2.Aca va el 
+ contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2.Aca 
+ va el contenido de la columna 2.Aca va el contenido
+ de la columna 2.Aca va el contenido de la columna 2.
+ Aca va el contenido de la columna 2.Aca va el contenido
+ de la columna 2.Aca va el contenido de la columna 2.Aca
+ va el contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2.Aca va
+ el contenido de la columna 2.Aca va el contenido de la 
+ columna 2.Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de la columna
+ 2.Aca va el contenido de la columna 2.Aca va el contenido
+ de la columna 2.Aca va el contenido de la columna 2.Aca va
+ el contenido de la columna 2.Aca va el contenido de la columna
+ 2.Aca va el contenido de la columna 2.Aca va el contenido de la
+ columna 2.Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de la
+ columna 2.Aca va el contenido de la columna 2.Aca va 
+ el contenido de la columna 2.Aca va el contenido de 
+ la columna 2.Aca va el contenido de la columna 2.Aca 
+ va el contenido de la columna 2.Aca va el contenido de
+ la columna 2.Aca va el contenido de la columna 2.Aca va
+ el contenido de la columna 2.Aca va el contenido de la 
+ columna 2.Aca va el contenido de la columna 2.Aca va el
+ contenido de la columna 2.Aca va el contenido de la columna
+ 2.Aca va el contenido de la columna 2.Aca va el 
+ contenido de la columna 2.Aca va el contenido de la
+ columna 2.Aca va el contenido de la columna 2.Aca va
+ el contenido de la columna 2.Aca va el contenido de 
+ la columna 2.Aca va el contenido de la columna 2.Aca 
+ va el contenido de la columna 2.Aca va el contenido 
+ de la columna 2.Aca va el contenido de la columna 2.
+ Aca va el contenido de la columna 2.Aca va el contenido
+ de la columna 2.
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2>CSS</h2>
+<pre><code>* {
+  margin:0px;
+  padding:0px;
+}
+#columna1 {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:200px;
+  margin-top:10px;
+  background-color:#ffff55;
+}
+#columna2 { 
+  margin-left:220px;
+  margin-right:20px;
+  margin-top:10px;  
+  background-color:#ffffbb;
+}
+
+#menuvertical {
+  padding:15px;
+  list-style-type:none;
+}
+
+#menuvertical a:hover {
+  background-color:#336699;
+}
+
+#menuvertical a {
+  width:170px;
+  text-decoration:none;
+  text-align:center;
+  color:#ff0000;
+  background-color:#f7f8e8;
+  padding:3px 2px;
+  display:block;
+}</code></pre>
+</body>
+</html>

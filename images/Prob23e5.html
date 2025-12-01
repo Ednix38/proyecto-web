@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function verificarArroba(mail) {
+            let cant = 0;
+            for (let f = 0; f < mail.length; f++) {
+                if (mail.charAt(f) == '@') {
+                    cant++;
+                }
+            }
+            if (cant != 0) {
+                document.write('El mail ' + mail + ' tiene el caracter @');
+            } else {
+                document.write('El mail ' + mail + ' no tiene el caracter @');
+            }
+        }
+
+        let mail = prompt('Ingrese un mail:');
+        verificarArroba(mail);
+    </script>
+
+</body>
+
+</html>

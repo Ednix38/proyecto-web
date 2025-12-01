@@ -1,0 +1,107 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portafolio — Universidad Tecnológica de Aguascalientes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<main class="container">
+    <!-- Introducción -->
+    <section class="intro">
+        <h2>Aplicaciones Web — Resumen de la materia</h2>
+        <p class="lead">En esta materia se estudian las tecnologías básicas para construir páginas y aplicaciones para la web: <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>. A continuación se presenta un resumen de los conceptos, competencias y objetivos de la materia.</p>
+    </section>
+
+    <!-- Sección HTML, CSS y JS -->
+    <section class="tecnologias">
+        <h3>¿Qué es HTML?</h3>
+        <p>HTML (HyperText Markup Language) es el lenguaje de marcado que estructura el contenido de una página: encabezados, párrafos, listas, tablas, imágenes y enlaces. HTML define la semántica del contenido para navegadores y para herramientas de accesibilidad.</p>
+
+        <h3>¿Qué es CSS?</h3>
+        <p>CSS (Cascading Style Sheets) es el lenguaje de estilos que controla la apariencia: colores, tipografías, distribuciones (layout), y comportamiento responsivo. Con CSS hacemos que la página se vea bien en distintos tamaños de pantalla.</p>
+
+        <h3>¿Qué es JavaScript?</h3>
+        <p>JavaScript es el lenguaje que añade interactividad y comportamiento: responder a eventos, modificar el DOM, consumir APIs, validar formularios y crear experiencias dinámicas en el navegador.</p>
+    </section>
+
+    <!-- Competencias -->
+    <section class="competencias">
+        <h3>Competencias de la materia</h3>
+        <ul>
+            <li>Diseñar y estructurar páginas web utilizando HTML de manera semántica.</li>
+            <li>Aplicar estilos y layouts responsivos con CSS.</li>
+            <li>Implementar interactividad y validaciones con JavaScript.</li>
+            <li>Integrar buenas prácticas de accesibilidad y usabilidad.</li>
+            <li>Desarrollar proyectos web completos, combinando teoría y práctica.</li>
+        </ul>
+    </section>
+
+    <!-- Objetivos de aprendizaje -->
+    <section class="objetivos">
+        <h3>Objetivos de aprendizaje</h3>
+        <ol>
+            <li>Comprender la estructura básica de un documento HTML.</li>
+            <li>Aplicar CSS para mejorar la presentación visual de contenidos web.</li>
+            <li>Manipular el DOM y responder a eventos usando JavaScript.</li>
+            <li>Desarrollar habilidades de depuración y prueba de aplicaciones web.</li>
+            <li>Fomentar la creatividad y la resolución de problemas en proyectos web.</li>
+        </ol>
+    </section>
+
+    <!-- Actividades y proyectos -->
+    <section class="actividades">
+        <h3>Actividades y proyectos</h3>
+        <p>Durante el curso se realizan diversas actividades prácticas, entre las que destacan:</p>
+        <ul>
+            <li>Creación de páginas web estáticas con HTML y CSS.</li>
+            <li>Integración de scripts de JavaScript para formularios y validaciones.</li>
+            <li>Desarrollo de mini proyectos individuales y grupales.</li>
+            <li>Presentación de un portafolio digital con todos los ejercicios realizados.</li>
+        </ul>
+    </section>
+
+    <!-- Habilidades adquiridas -->
+    <section class="habilidades">
+        <h3>Habilidades adquiridas</h3>
+        <p>Al finalizar la materia, el estudiante podrá:</p>
+        <ul>
+            <li>Construir páginas web accesibles y responsivas.</li>
+            <li>Implementar interactividad básica mediante JavaScript.</li>
+            <li>Aplicar estándares y buenas prácticas de desarrollo web.</li>
+            <li>Documentar y presentar proyectos de manera profesional.</li>
+        </ul>
+    </section>
+
+    <!-- Propósito de la materia -->
+    <section class="proposito">
+        <h3>Propósito de la materia</h3>
+        <p>El propósito de este curso es que el estudiante sea capaz de concebir, construir y publicar páginas web accesibles y responsivas, aplicando buenas prácticas de semántica, diseño y código. Se trabajan tanto ejercicios teóricos como prácticas y proyectos, fomentando la creatividad, la organización y el pensamiento lógico.</p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">© <span id="year"></span> — Portafolio educativo</div>
+</footer>
+
+<script>
+// Footer: año actual
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Marca el enlace activo en el nav según el archivo actual
+(function(){
+    const nav = document.querySelectorAll('.main-nav a');
+    const path = location.pathname.split('/').pop() || 'index.html';
+    nav.forEach(a => {
+        if(a.getAttribute('href') === path) a.classList.add('active');
+    });
+})();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

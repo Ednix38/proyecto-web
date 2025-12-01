@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 21-1 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        function cargar(vec) {
+            for (let f = 0; f &lt; vec.length; f++) {
+                let valor = prompt(&#x27;Ingrese componente:&#x27;);
+                vec[f] = parseInt(valor);
+            }
+        }
+
+        function sumar(vec) {
+            let suma = 0;
+            for (let f = 0; f &lt; vec.length; f++) {
+                suma = suma + vec[f];
+            }
+            document.write(&#x27;Valor acumulado de las componentes:&#x27; + suma + &#x27;&lt;br&gt;&#x27;);
+        }
+
+        function sumarMayor36(vec) {
+            let suma = 0;
+            for (let f = 0; f &lt; vec.length; f++) {
+                if (vec[f] &gt; 36) {
+                    suma = suma + vec[f];
+                }
+            }
+            document.write(&#x27;Valor acumulado de las componentes mayores a 36:&#x27; + suma + &#x27;&lt;br&gt;&#x27;);
+        }
+
+        function cantidadMayores50(vec) {
+            let cant = 0;
+            for (let f = 0; f &lt; vec.length; f++) {
+                if (vec[f] &gt; 50) {
+                    cant = cant + 1;
+                }
+            }
+            document.write(&#x27;Cantidad de componentes mayores a 50:&#x27; + cant + &#x27;&lt;br&gt;&#x27;);
+        }
+
+        let vec = new Array(8);
+        cargar(vec);
+        sumar(vec);
+        sumarMayor36(vec);
+        cantidadMayores50(vec);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form>
+        <p>Como se dice rojo en ingles:</p>
+        <p><select id="pregunta1">
+            <option value="1">blue</option>
+            <option value="2">green</option>
+            <option value="3">red</option>
+        </select></p>
+        <p> Como se dice ventana en ingles:</p>
+        <p><select id="pregunta2">
+            <option value="1">window</option>
+            <option value="2">door</option>
+            <option value="3">bedroom</option>
+        </select></p>
+        <p> Como se dice gato en ingles:</p>
+        <p><select id="pregunta3">
+            <option value="1">dog</option>
+            <option value="2">cat</option>
+            <option value="3">lion</option>
+        </select></p>
+        <p> Como se dice hombre en ingles:</p>
+        <p><select id="pregunta4">
+            <option value="1">women</option>
+            <option value="2">man</option>
+            <option value="3">child</option>
+        </select></p>
+        <p><input type="button" value="Controlar" onClick="verificar()"></p>
+    </form>
+
+    <script>
+        function verificar() {
+            let correctas = 0;
+            let ele1 = document.getElementById('pregunta1');
+            let ele2 = document.getElementById('pregunta2');
+            let ele3 = document.getElementById('pregunta3');
+            let ele4 = document.getElementById('pregunta4');
+            if (ele1.options[ele1.selectedIndex].value == 3) {
+                correctas++;
+            }
+            if (ele2.options[ele2.selectedIndex].value == 1) {
+                correctas++;
+            }
+            if (ele3.options[ele3.selectedIndex].value == 2) {
+                correctas++;
+            }
+            if (ele4.options[ele4.selectedIndex].value == 2) {
+                correctas++;
+            }
+            alert('Cantidad de respuestas correctas:' + correctas);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 35 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;button onClick=&quot;redireccionar()&quot;&gt;Redireccionar a un servidor de mail&lt;/button&gt;
+
+    &lt;script&gt;
+        function redireccionar() {
+            let num;
+            num = Math.random() * 3;
+            num = parseInt(num);
+            if (num == 0) {
+                window.location = &#x27;https://www.outlook.com&#x27;;
+            }
+            if (num == 1) {
+                window.location = &#x27;https://www.yahoo.com&#x27;;
+            }
+            if (num == 2) {
+                window.location = &#x27;https://www.gmail.com&#x27;;
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

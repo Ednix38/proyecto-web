@@ -1,0 +1,184 @@
+/* ------- Reset + base ------- */
+:root{
+  --bg:#0f1724;
+  --card:#14203a;
+  --accent:#ffcb05;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --white: #e6eef6;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#091834 0%, #071827 60%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:20px;
+}
+a{color:inherit}
+h1,h2,h3{margin:0}
+/* ------- Layout ------- */
+.app{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap:20px;
+  min-height:80vh;
+}
+header{
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#021124;
+  box-shadow:0 6px 18px rgba(3,7,18,0.6);
+}
+/* =============================
+   🔥 SIDEBAR UPGRADE — CONTRASTE
+   ============================= */
+
+/* Contenedor del sidebar */
+nav {
+  font-weight:600;
+  font-size: 16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 32, 58, 0.85),
+    rgba(12, 22, 40, 0.85)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  background-color: var(--bg)
+}
+
+/* ——— ITEMS DEL MENÚ ——— */
+
+.nav-link,
+.nav-links {
+  position: relative;
+  padding: 12px 14px;
+  color: var(--white);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Líneas separadoras entre items */
+.nav-link:not(:last-child),
+.nav-links:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.nav-link::after,
+.nav-links::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+}
+
+/* Hover */
+.nav-link:hover,
+.nav-links:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(3px);
+}
+
+/* Estado activo */
+.nav-link.active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.04)
+  );
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+}
+
+/* ------- Controls ------- */
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+input[type="search"], select{
+  background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;color:var(--white); 
+}
+select option {
+  background: rgba(20,20,26,0.95);
+  color: #f8f8f8;
+  padding: 6px;
+}
+
+button{
+  background:var(--accent);border:none;padding:8px 12px;border-radius:8px;color:#021124;font-weight:600;cursor:pointer;
+}
+/* ------- Grid ------- */
+.grid{
+  display:grid;grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap:12px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;padding:10px; min-height:140px; display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.card h3{font-size:16px;margin-bottom:4px;}
+.types{display:flex;gap:6px;flex-wrap:wrap}
+.type{padding:6px 8px;border-radius:999px;font-size:12px;background:rgba(255,255,255,0.03)}
+.sprite{display:flex;align-items:center;justify-content:left;height:100px}
+/* **NUEVA REGLA para el tamaño del sprite en la tarjeta** */
+.card .sprite img {
+    max-width: 100px; /* Tamaño máximo para el sprite en la tarjeta */
+    height: auto;
+    
+}
+.small{font-size:12px;color:var(--muted)}
+/* ------- Team ------- */
+.team{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.slot{width:80px;height:96px;border-radius:10px;background:var(--glass-2);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px dashed rgba(255,255,255,0.03)}
+.slot img{width:56px;height:56px}
+.slot .name{font-size:12px;margin-top:6px;text-align:center}
+/* ------- Modal ------- */
+.modal{
+  position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);z-index:50;padding:20px;
+}
+.modal.show{display:flex}
+.modal .panel{width:100%;max-width:900px;background:linear-gradient(180deg,#061220,#0b1724);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.flex{display:flex;gap:12px}
+.col{flex:1}
+.statbar{height:8px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.statfill{height:100%;background:linear-gradient(90deg,var(--accent),#ff7a00)}
+/* ------- Game ------- */
+.silhouette{filter:brightness(0) saturate(0) invert(0);transition:all .4s}
+.silhouette.hidden{filter:brightness(0) saturate(100%) contrast(1) invert(1) sepia(0) blur(0) drop-shadow(0 0 20px rgba(0,0,0,0.6));opacity:.95}
+/* ------- Map ------- */
+.map{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border-radius:10px;padding:18px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;
+}
+.city{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.01);cursor:pointer;border:1px solid rgba(255,255,255,0.02)}
+/* ------- Footer small ------- */
+footer{grid-column:1/-1;margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr; padding:12px}
+  nav{order:2}
+  header{flex-direction:column;align-items:flex-start;gap:10px}
+}

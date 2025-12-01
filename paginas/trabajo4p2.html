@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Ajuste para iframe gigante */
+    .iframe-container {
+      width: 100%;
+      height: 90vh; /* Ocupa casi toda la altura de la pantalla */
+      margin-top: 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .viewer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.viewer iframe {
+  width: 100%;
+  height: 1200px; /* TAMANO GRANDE VERTICAL */
+  border: none;
+}
+
+iframe {
+  width: 100%;
+  height: 1000px;
+  border: none;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <div id="header-placeholder"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
+    <article class="task">
+      <header>
+        <h2>Documento JavaScript</h2>
+        <p class="meta">
+          Fecha de entrega: <time datetime="2025-10-31">31 de octubre de 2025</time> •
+          Tipo: Documento en línea • Unidad II
+        </p>
+      </header>
+
+      <div class="content">
+        <p class="lead center description" style="text-align: justify;">
+          Este trabajo consiste en un documento interactivo tipo revista donde se documenta la historia, contexto, funcionamiento y comandos mas importantes de JavaScript. Está alojado en <strong>Calaméo</strong>. 
+        </p>
+
+        <p>Link del documento: 
+          <a href="https://www.calameo.com/read/008059329121dd840990e" target="_blank">
+            Ver en Documento en Calaméo
+          </a>
+        </p>
+        <iframe src="//v.calameo.com/?bkcode=008059329121dd840990e&mode=viewer"></iframe>
+      </div>
+
+      <footer>
+        <p>Autor: Enoc | Fecha de entrega: 31 de octubre de 2025</p>
+      </footer>
+    </article>
+
+    <div class="cta">
+      <a href="trabajo3p2.html" class="btn">← Trabajo anterior</a>
+      <a href="trabajo5p2.html" class="btn">Siguiente trabajo →</a>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <p>© 2025 Portafolio Académico — Universidad Tecnológica</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

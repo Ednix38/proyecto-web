@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcial I — Trabajos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+</header>
+
+<main class="container">
+  <section>
+    <h2>Descripción general</h2>
+    <p class="lead">
+      En el Parcial I realizamos investigaciones, resúmenes en formato de texto y entregables de codigo.
+      Cada trabajo incluye una breve ficha con su descripción, fecha de entrega e instrucciones.
+      Puedes hacer clic en “Ver trabajo” para acceder al contenido completo.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lista de trabajos</h2>
+
+    <!-- Trabajo 1 -->
+    <article class="task">
+      <header>
+        <h3>Conceptos generales del desarrollo web</h3>
+        <p class="meta">Fecha de entrega: <time datetime="2025-09-05">5 de septiembre de 2025</time> • Unidad I — Introducción al desarrollo web</p>
+      </header>
+      <div class="content">
+        <p><strong>Instrucciones:</strong> Identificar los conceptos de aplicaciones web: Internet y web, aplicación web, front end, back end, hosting, protocolos (HTTP, HTTPS) y modelo cliente-servidor.</p>
+      </div>
+      <footer>
+        <a class="btn" href="trabajo1.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+    <!-- Trabajo 2 -->
+    <article class="task">
+      <header>
+        <h3>Configuración de entorno de desarrollo web</h3>
+        <p class="meta">Fecha de entrega: <time datetime="2025-09-12">12 de septiembre de 2025</time> • Unidad I — Introducción al desarrollo web</p>
+      </header>
+      <div class="content">
+        <p><strong>Instrucciones:</strong> Describir el proceso de instalación y configuración del ambiente de desarrollo Web utilizando <strong>Visual Studio Code</strong>.</p>
+      </div>
+      <footer>
+        <a class="btn" href="trabajo2.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+        <!-- Trabajo 3 -->
+    <article class="task">
+      <header>
+        <h3>Entornos de desarrollo web</h3>
+        <p class="meta">Fecha de entrega: <time datetime="2025-09-12">12 de septiembre de 2025</time> • Unidad I — Introducción al desarrollo web</p>
+      </header>
+      <div class="content">
+        <p><strong>Instrucciones:</strong> <ol><strong>1.</strong> Identificar las ventajas y desventajas de las herramientas del lado del cliente en el desarrollo Web.</ol>
+        <ol><strong>2.</strong> Identificar las ventajas y desventajas de las herramientas del lado del servidor en el desarrollo Web.</ol></p>
+      </div>
+      <footer>
+        <a class="btn" href="trabajo3.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+    <!-- Trabajo 4 -->
+    <article class="task">
+      <header>
+        <h3>Ejercicios HTML básicos</h3>
+        <p class="meta">Ejercicios prácticos de estructura y etiquetas fundamentales de HTML.</p>
+      </header>
+      <footer>
+        <a class="btn" href="trabajo4.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+    <!-- Trabajo 5 -->
+    <article class="task">
+      <header>
+        <h3>Ejercicios: Tablas y formularios</h3>
+        <p class="meta">Ejercicios aplicando etiquetas <code>&lt;table&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, y validaciones básicas.</p>
+      </header>
+      <footer>
+        <a class="btn" href="trabajo5.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+    <!-- Trabajo 6 -->
+    <article class="task">
+      <header>
+        <h3>Ejercicios de HTML — Segunda parte</h3>
+        <p class="meta">Prácticas con enlaces, multimedia, y estructuras semánticas más avanzadas.</p>
+      </header>
+      <footer>
+        <a class="btn" href="trabajo6.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+    <!-- Trabajo 7 -->
+    <article class="task">
+      <header>
+        <h3>Tabla periódica de HTML</h3>
+        <p class="meta">Proyecto visual que muestra las etiquetas HTML clasificadas según su función.</p>
+      </header>
+      <footer>
+        <a class="btn" href="trabajo7.html">Ver trabajo completo</a>
+      </footer>
+    </article>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year"></span> — Portafolio educativo</div>
+</footer>
+<script src="script.js"></script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

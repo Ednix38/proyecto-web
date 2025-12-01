@@ -1,0 +1,11 @@
+#lista1 li:nth-child(even) {
+  text-decoration:underline;
+}
+
+#lista1 li:nth-child(odd) {
+  text-decoration:line-through;
+}
+
+#lista2 li:nth-child(4n) {
+  color:#0f0;
+}

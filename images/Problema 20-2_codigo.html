@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 20-2 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        function retornarDiaSemana(dia) {
+            switch (dia) {
+                case 0:
+                    return &#x27;Domingo&#x27;;
+                case 1:
+                    return &#x27;Lunes&#x27;;
+                case 2:
+                    return &#x27;Martes&#x27;;
+                case 3:
+                    return &#x27;Miércoles&#x27;;
+                case 4:
+                    return &#x27;Jueves&#x27;;
+                case 5:
+                    return &#x27;Viernes&#x27;;
+                case 6:
+                    return &#x27;Sábado&#x27;;
+                default:
+                    return &#x27;día inválido&#x27;;
+            }
+        }
+
+        function retornarMes(mes) {
+            switch (mes) {
+                case 0:
+                    return &#x27;Enero&#x27;;
+                case 1:
+                    return &#x27;Febrero&#x27;;
+                case 2:
+                    return &#x27;Marzo&#x27;;
+                case 3:
+                    return &#x27;Abril&#x27;;
+                case 4:
+                    return &#x27;Mayo&#x27;;
+                case 5:
+                    return &#x27;Junio&#x27;;
+                case 6:
+                    return &#x27;Julio&#x27;;
+                case 7:
+                    return &#x27;Agosto&#x27;;
+                case 8:
+                    return &#x27;Septiembre&#x27;;
+                case 9:
+                    return &#x27;Octubre&#x27;;
+                case 10:
+                    return &#x27;Noviembre&#x27;;
+                case 11:
+                    return &#x27;Diciembre&#x27;;
+                default:
+                    return &#x27;mes inválido&#x27;;
+            }
+        }
+
+
+        function retornarFechaTexto() {
+            let fecha = new Date();
+            let cadena = &#x27;Hoy es &#x27; + retornarDiaSemana(fecha.getDay()) + &#x27; &#x27; + fecha.getDate() + &#x27; de &#x27; +
+                retornarMes(fecha.getMonth()) + &#x27; de &#x27; + fecha.getFullYear();
+            return cadena;
+        }
+
+        document.write(retornarFechaTexto());
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

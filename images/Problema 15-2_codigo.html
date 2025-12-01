@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Problema 15-2 - Código</title>
+<style>
+body { font-family: monospace; background: #f5f5f5; padding: 20px; }
+pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+h2 { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h2>HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Ejemplo de JavaScript&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;script&gt;
+        /* Desarrollar un programa que solicite la carga de 10 números 
+            e imprima la suma de lo últimos 5 valores ingresados.*/
+        let suma = 0;
+        for (let f = 1; f &lt;= 10; f++) {
+            let valor = parseInt(prompt(&#x27;Ingrese un nro:&#x27;));
+            if (f &gt; 5) {
+                suma = suma + valor;
+            }
+        }
+        document.write(&#x27;La suma de los últimos cinco valores ingresados es:&#x27; + suma);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+</body>
+</html>

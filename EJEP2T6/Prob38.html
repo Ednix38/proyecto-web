@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body onLoad="verificar()">
+
+    <h1>Bienvenidos</h1>
+
+    <script>
+        function verificar() {
+            if (navigator.cookieEnabled == true) {
+                alert('Acceso a cookies activadas');
+            } else {
+                alert('No se encuentran activadas las cookies en este navegador');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
